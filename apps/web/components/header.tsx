@@ -22,7 +22,7 @@ export function Header() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/95 shadow-[0_1px_8px_rgba(0,0,0,0.06)] backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-[#fbf9f6]/95 shadow-[0_1px_8px_rgba(0,0,0,0.06)] backdrop-blur-sm">
       <div className="rift-container flex items-center justify-between py-4 md:py-5">
         <Link href="/" aria-label="Rift — Home">
           <svg
