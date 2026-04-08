@@ -1,0 +1,103 @@
+[     157ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     171ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[    3186ms] [WARNING] The resource http://localhost:3000/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[    3425ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[    3452ms] [LOG] [Fast Refresh] done in 43ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  142085ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  142185ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  200734ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  200800ms] [LOG] [Fast Refresh] done in 57ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  420654ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  421077ms] [LOG] [Fast Refresh] done in 296ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  421597ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  421657ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  424673ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Regular-s.p.08p4vyb7yb7k9.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  424674ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Light-s.p.04nzp-33m9cuw.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  424674ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Bold-s.p.0cez1a07vbf0e.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  424674ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Medium-s.p.12w2kaqv2u7uc.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  424674ms] [WARNING] The resource http://localhost:3000/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  426713ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  426780ms] [LOG] [Fast Refresh] done in 146ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  426972ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  426999ms] [LOG] [Fast Refresh] done in 127ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  430045ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Regular-s.p.08p4vyb7yb7k9.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  430045ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Light-s.p.04nzp-33m9cuw.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  430045ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Bold-s.p.0cez1a07vbf0e.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  430045ms] [WARNING] The resource http://localhost:3000/_next/static/media/BasisGrotesquePro_Medium-s.p.12w2kaqv2u7uc.otf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  430045ms] [WARNING] The resource http://localhost:3000/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  442886ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  442925ms] [LOG] [Fast Refresh] done in 76ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  450073ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  450130ms] [LOG] [Fast Refresh] done in 13ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  456015ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  456058ms] [LOG] [Fast Refresh] done in 10ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  461244ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  461272ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  521858ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  521890ms] [LOG] [Fast Refresh] done in 53ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  549164ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  549218ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  575228ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  575263ms] [LOG] [Fast Refresh] done in 40ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  581921ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  581949ms] [LOG] [Fast Refresh] done in 70ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  621837ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  621891ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  655603ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  655657ms] [LOG] [Fast Refresh] done in 44ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  682128ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  682198ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  740590ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  740660ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  764342ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  764388ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  784369ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  784483ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  872468ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  872600ms] [ERROR] ./apps/web/app/page.tsx:44:17
+Expected '</', got 'jsx text'
+  42 |           <div className="absolute inset-0 bg-gradient-to-br from-aubergine via-[#3a3032] to-[#4a3a2a]" />
+  43 |         </FadeIn>
+> 44 |       </section>
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |
+     | ^
+> 46 |       {/* Two images + Quote — 3 columns on desktop */}
+     | ^^^^^^
+  47 |       <section className="grid grid-cols-1 gap-6 px-[var(--spacing-edge)] py-[80px] md:grid-cols-3 md:gap-10 md:px-[var(--spacing-edge-md)] lg:px-[var(--spacing...
+  48 |         <FadeIn direction="side" className="relative aspect-[2/4]">
+  49 |           <div className="absolute inset-0 bg-gradient-to-br from-aubergine via-[#3a3032] to-[#4a3a2a]" />
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:3272
+[  872709ms] [ERROR] ./apps/web/app/page.tsx:44:17
+Expected '</', got 'jsx text'
+  42 |           <div className="absolute inset-0 bg-gradient-to-br from-aubergine via-[#3a3032] to-[#4a3a2a]" />
+  43 |         </FadeIn>
+> 44 |       </section>
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |
+     | ^
+> 46 |       {/* Two images + Quote — 3 columns on desktop */}
+     | ^^^^^^
+  47 |       <section className="grid grid-cols-1 gap-6 px-[var(--spacing-edge)] py-[80px] md:grid-cols-3 md:gap-10 md:px-[var(--spacing-edge-md)] lg:px-[var(--spacing...
+  48 |         <FadeIn direction="side" className="relative aspect-[2/4]">
+  49 |           <div className="absolute inset-0 bg-gradient-to-br from-aubergine via-[#3a3032] to-[#4a3a2a]" />
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:3272
+[  872769ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  884029ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  884041ms] [LOG] [Fast Refresh] done in 64ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1126667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1126812ms] [LOG] [Fast Refresh] done in 175ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1297739ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1297827ms] [LOG] [Fast Refresh] done in 93ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1430286ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1430361ms] [LOG] [Fast Refresh] done in 114ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1452927ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1452966ms] [LOG] [Fast Refresh] done in 16ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1470493ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1470553ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1506427ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1506498ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1545080ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 1545152ms] [LOG] [Fast Refresh] done in 65ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431

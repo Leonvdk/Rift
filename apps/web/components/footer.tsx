@@ -2,12 +2,12 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="flex items-end justify-between px-8 pb-8 pt-20 md:px-12 md:pb-12">
+    <footer className="flex flex-col gap-6 px-6 pb-6 pt-20 md:flex-row md:items-end md:justify-between md:px-12 md:pb-10">
       <div className="flex items-end gap-4">
         {/* Rift brand mark (starburst) */}
         <svg
           viewBox="0 0 1500 1500"
-          className="h-10 w-10 text-charcoal"
+          className="h-10 w-10 shrink-0 text-aubergine"
           aria-hidden="true"
         >
           <path
@@ -76,7 +76,7 @@ export function Footer() {
           />
         </svg>
         <div className="text-sm leading-snug">
-          <p>Get in touch:</p>
+          <p>Get in touch or make an appointment</p>
           <p>info@rift-furniture.nl</p>
         </div>
       </div>

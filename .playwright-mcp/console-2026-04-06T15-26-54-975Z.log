@@ -1,0 +1,24 @@
+[     177ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     214ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[    3241ms] [WARNING] The resource http://localhost:3000/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  433874ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  433993ms] [LOG] [Fast Refresh] done in 150ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  471096ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  471124ms] [LOG] [Fast Refresh] done in 57ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  476298ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  476358ms] [LOG] [Fast Refresh] done in 89ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  476664ms] ReferenceError: StarburstMark is not defined
+    at HomePage (about://React/Server/file:///Users/leonvandeklundert/Leonvdk/Projects/Rift/Rift/apps/web/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__0vt6qeg._.js?id=%255Bproject%255D%252Fapps%252Fweb%252Fapp%252Fpage.tsx+%255Bapp-rsc%255D+%2528ecmascript%2529?79:31:422)
+    at resolveErrorDev (http://localhost:3000/_next/static/chunks/0whz_next_dist_compiled_react-server-dom-turbopack_0tdjo0m._.js:1919:105)
+    at processFullStringRow (http://localhost:3000/_next/static/chunks/0whz_next_dist_compiled_react-server-dom-turbopack_0tdjo0m._.js:2434:29)
+    at processFullBinaryRow (http://localhost:3000/_next/static/chunks/0whz_next_dist_compiled_react-server-dom-turbopack_0tdjo0m._.js:2393:9)
+    at processBinaryChunk (http://localhost:3000/_next/static/chunks/0whz_next_dist_compiled_react-server-dom-turbopack_0tdjo0m._.js:2502:221)
+    at progress (http://localhost:3000/_next/static/chunks/0whz_next_dist_compiled_react-server-dom-turbopack_0tdjo0m._.js:2689:13)
+[  483472ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  483509ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  483725ms] [LOG] [Fast Refresh] done in 133ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  484068ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  484120ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  487163ms] [WARNING] The resource http://localhost:3000/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  620284ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  620386ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431

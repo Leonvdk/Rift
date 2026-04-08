@@ -1,18 +1,69 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Inter } from "next/font/google"
+import localFont from "next/font/local"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+const portrait = localFont({
+  src: [
+    {
+      path: "../public/Fonts/Portrait/Portrait-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Portrait/Portrait-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/Fonts/Portrait/Portrait-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Portrait/Portrait-RegularItalic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/Fonts/Portrait/Portrait-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Portrait/Portrait-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-serif",
 })
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-serif",
+const basisGrotesque = localFont({
+  src: [
+    {
+      path: "../public/Fonts/Basis Grotesque Pro/BasisGrotesquePro-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Basis Grotesque Pro/BasisGrotesquePro-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Basis Grotesque Pro/BasisGrotesquePro-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/Basis Grotesque Pro/BasisGrotesquePro-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sans",
 })
 
 export const metadata: Metadata = {
@@ -27,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="nl" className={`${portrait.variable} ${basisGrotesque.variable}`}>
       <body className="flex min-h-svh flex-col">
         <Header />
         <main className="flex-1">{children}</main>

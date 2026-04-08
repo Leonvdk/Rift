@@ -1,0 +1,39 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Rift — Home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img [ref=e4]
+    - navigation [ref=e9]:
+      - link "Projects" [ref=e10] [cursor=pointer]:
+        - /url: /projects
+      - link "About" [ref=e11] [cursor=pointer]:
+        - /url: /about
+      - link "Process" [ref=e12] [cursor=pointer]:
+        - /url: /process
+      - link "Contact" [ref=e13] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - img [ref=e19]
+      - heading "Interior, Craft & Design" [level=1] [ref=e37]
+    - generic [ref=e39]:
+      - heading "We are Rift" [level=2] [ref=e41]
+      - paragraph [ref=e43]: At Rift, we create interiors where design, craftsmanship & detail come together. From the first idea to the final finish we transform ideas into refined and distinctive interiors.
+    - generic [ref=e58]:
+      - paragraph [ref=e60]: We believe that exceptional interiors start with listening & understanding. At Rift we strive to create spaces that are timeless, thoughtful & refined. Crafted to be lived in and enjoyed every day.
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: RIFT
+        - paragraph [ref=e63]: “Where ideas take shape in timeless interiors”
+  - contentinfo [ref=e64]:
+    - generic [ref=e65]:
+      - img [ref=e66]
+      - generic [ref=e83]:
+        - paragraph [ref=e84]: Get in touch or make an appointment
+        - paragraph [ref=e85]: info@rift-furniture.nl
+    - navigation [ref=e86]:
+      - link "Instagram" [ref=e87] [cursor=pointer]:
+        - /url: https://instagram.com
+      - link "Contact" [ref=e88] [cursor=pointer]:
+        - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]:
+    - img [ref=e95]

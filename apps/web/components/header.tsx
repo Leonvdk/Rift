@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 
 const navItems = [
   { label: "Projects", href: "/projects" },
@@ -8,12 +11,14 @@ const navItems = [
 ]
 
 export function Header() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <header className="flex items-start justify-between px-8 pt-8 pb-4 md:px-12 md:pt-12">
+    <header className="relative z-50 flex items-center justify-between px-6 py-3 md:px-12 md:py-4">
       <Link href="/" aria-label="Rift — Home">
         <svg
           viewBox="0 0 1500 1500"
-          className="h-10 w-auto md:h-12"
+          className="h-18 w-auto md:h-20 -my-2 md:-my-3"
           aria-hidden="true"
         >
           <path
@@ -35,7 +40,8 @@ export function Header() {
         </svg>
       </Link>
 
-      <nav className="flex gap-6 pt-1 text-sm">
+      {/* Desktop nav */}
+      <nav className="hidden gap-6 pt-1 text-sm md:flex">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -46,6 +52,44 @@ export function Header() {
           </Link>
         ))}
       </nav>
+
+      {/* Mobile hamburger */}
+      <button
+        type="button"
+        className="pt-1 md:hidden"
+        onClick={() => setOpen(!open)}
+        aria-label={open ? "Close menu" : "Open menu"}
+      >
+        <div className="flex w-6 flex-col gap-1.5">
+          <span
+            className={`block h-px w-full bg-current transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+          />
+          <span
+            className={`block h-px w-full bg-current transition-opacity duration-300 ${open ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`block h-px w-full bg-current transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+          />
+        </div>
+      </button>
+
+      {/* Mobile menu overlay */}
+      {open && (
+        <div className="fixed inset-0 top-16 z-40 bg-cream/98 backdrop-blur-sm md:hidden">
+          <nav className="flex flex-col gap-8 px-6 pt-12">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-sans text-3xl font-light transition-opacity hover:opacity-60"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
