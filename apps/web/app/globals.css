@@ -9,15 +9,6 @@
 
   --font-sans: "Basis Grotesque Pro", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Portrait", ui-serif, Georgia, serif;
-  --font-grotesque: "Basis Grotesque Pro", ui-sans-serif, system-ui, sans-serif;
-
-  /* Spacing system — spacious, image-driven layout */
-  --spacing-section: 80px;       /* vertical rhythm between sections */
-  --spacing-section-lg: 120px;   /* larger screens breathe more */
-  --spacing-edge: 24px;          /* side padding mobile */
-  --spacing-edge-md: 40px;       /* side padding tablet */
-  --spacing-edge-lg: 56px;       /* side padding desktop */
-  --spacing-gap: 4px;            /* gap between image tiles */
 
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-side: fade-side 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -61,4 +52,33 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------------------------
+   Film grain overlay — subtle analog texture
+   Uses an SVG feTurbulence filter as a fixed
+   full-screen layer. Pointer-events: none so it
+   never blocks interaction.
+   ------------------------------------------------ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  filter: url(#grain);
+  background: transparent;
+}
+
+/* ------------------------------------------------
+   Container utility — caps content at 1400px
+   with fluid side padding that scales with viewport
+   ------------------------------------------------ */
+.rift-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
 }
