@@ -46,8 +46,12 @@
   }
 }
 
-body {
+html {
   background-color: var(--color-cream);
+}
+
+body {
+  background-color: transparent;
   color: var(--color-aubergine);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -55,21 +59,19 @@ body {
 }
 
 /* ------------------------------------------------
-   Film grain overlay — subtle analog texture
-   Uses an SVG feTurbulence filter as a fixed
-   full-screen layer. Pointer-events: none so it
-   never blocks interaction.
+   Film grain background — sits behind all content
+   at z-index -1. Body is transparent so the grain
+   shows through on top of html's cream bg.
    ------------------------------------------------ */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 100;
-  pointer-events: none;
+  z-index: -1;
   opacity: 0.28;
   mix-blend-mode: multiply;
   filter: url(#grain);
-  background: transparent;
+  background: var(--color-cream);
 }
 
 /* ------------------------------------------------
