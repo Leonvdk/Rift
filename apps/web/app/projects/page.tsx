@@ -59,7 +59,7 @@ async function ProjectsContent({
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
                 </div>
-                <p className="mt-3 text-[15px] font-light md:mt-4">
+                <p className="mt-3 text-[15px] font-light [text-shadow:0_0_0_transparent] transition-[text-shadow] duration-700 ease-out group-hover:[text-shadow:0.3px_0_0_currentColor,-0.3px_0_0_currentColor] md:mt-4">
                   {project.title}
                 </p>
               </Link>

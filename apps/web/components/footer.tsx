@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { CopyEmail } from "./copy-email"
 
 export function Footer() {
   return (
@@ -78,7 +79,7 @@ export function Footer() {
           </svg>
           <div className="text-sm font-light leading-snug">
             <p>Get in touch or make an appointment</p>
-            <p>info@rift-furniture.nl</p>
+            <CopyEmail />
           </div>
         </div>
 

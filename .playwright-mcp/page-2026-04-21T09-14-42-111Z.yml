@@ -1,0 +1,44 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - navigation [ref=e10]:
+        - link "Projects" [ref=e11] [cursor=pointer]:
+          - /url: /projects
+          - text: Projects
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+          - text: About
+        - link "Process" [ref=e14] [cursor=pointer]:
+          - /url: /process
+          - text: Process
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact
+          - text: Contact
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: RIFT was founded in 2025. A passion for intentional design & craftsmanship lies at the core of everything we do.
+        - paragraph [ref=e23]: We believe true quality is defined by how something is made. Through the careful selection of materials, in the precision of every detail, and the attention given to each step of the process. Our interiors are built to stand the test of time, both in durability and in their visual relevance.
+      - img "Rift workshop — craftsman at work" [ref=e25]
+    - generic [ref=e28]:
+      - img "Rift interior craftsmanship" [ref=e30]
+      - img "Rift custom furniture detail" [ref=e32]
+      - paragraph [ref=e35]: By combining design and craftsmanship, we maintain control from concept to completion. This allows us to translate ideas into spaces that feel coherent, considered, and deeply connected to the people who use them.
+  - contentinfo [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - img [ref=e39]
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: Get in touch or make an appointment
+          - paragraph [ref=e58]: info@rift-furniture.nl
+      - navigation [ref=e59]:
+        - link "Instagram" [ref=e60] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e61] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e67] [cursor=pointer]:
+    - img [ref=e68]
+  - alert [ref=e71]

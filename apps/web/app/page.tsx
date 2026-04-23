@@ -32,7 +32,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── We are Rift — text 1/4, image 3/4 ── */}
+      {/* ── We are Rift — text 1/3, image 2/3 ── */}
       <section className="py-20 md:py-28 lg:py-36">
         <div className="rift-container">
           <FadeIn direction="side">
@@ -41,7 +41,7 @@ export default function HomePage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 lg:gap-16">
             <div className="md:col-span-1">
               <FadeIn direction="up" delay={150}>
                 <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
@@ -55,7 +55,7 @@ export default function HomePage() {
             <FadeIn
               direction="up"
               delay={200}
-              className="relative aspect-[4/3] md:col-span-3"
+              className="relative aspect-[4/3] md:col-span-2"
             >
               <Image
                 src={section2}
@@ -73,6 +73,29 @@ export default function HomePage() {
       <section className="py-20 md:py-28 lg:py-36">
         <div className="rift-container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 lg:gap-14">
+            {/* Quote block — first on mobile, last on desktop */}
+            <div className="flex items-center md:order-last">
+              <div>
+                <FadeIn direction="up">
+                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+                    We believe that exceptional interiors start with listening
+                    &amp; understanding. At Rift we strive to create spaces that
+                    are timeless, thoughtful &amp; refined. Crafted to be lived
+                    in and enjoyed every day.
+                  </p>
+                </FadeIn>
+                <FadeIn direction="up" delay={150}>
+                  <p className="mt-10 text-xs font-medium uppercase tracking-[0.2em]">
+                    RIFT
+                  </p>
+                  <p className="mt-1.5 font-serif text-[clamp(1.063rem,1.3vw,1.25rem)] italic">
+                    &ldquo;Where ideas take shape in timeless
+                    interiors&rdquo;
+                  </p>
+                </FadeIn>
+              </div>
+            </div>
+
             {/* Image 1 — always visible */}
             <FadeIn direction="side" className="relative aspect-[7/10]">
               <Image
@@ -98,29 +121,6 @@ export default function HomePage() {
                 className="object-cover"
               />
             </FadeIn>
-
-            {/* Quote block */}
-            <div className="flex items-center">
-              <div>
-                <FadeIn direction="up">
-                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                    We believe that exceptional interiors start with listening
-                    &amp; understanding. At Rift we strive to create spaces that
-                    are timeless, thoughtful &amp; refined. Crafted to be lived
-                    in and enjoyed every day.
-                  </p>
-                </FadeIn>
-                <FadeIn direction="up" delay={150}>
-                  <p className="mt-10 text-xs font-medium uppercase tracking-[0.2em]">
-                    RIFT
-                  </p>
-                  <p className="mt-1.5 font-serif text-[clamp(1.063rem,1.3vw,1.25rem)] italic">
-                    &ldquo;Where ideas take shape in timeless
-                    interiors&rdquo;
-                  </p>
-                </FadeIn>
-              </div>
-            </div>
           </div>
         </div>
       </section>

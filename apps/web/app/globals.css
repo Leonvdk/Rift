@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f5f1eb;
+  --color-cream: #FFFFF7;
   --color-aubergine: #2B2C2E;
   --color-silver: #F2F2F2;
   --color-black: #000000;
@@ -68,8 +68,8 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
   filter: url(#grain);
   background: var(--color-cream);
 }

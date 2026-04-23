@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - button "Open menu" [ref=e10]
+  - main [ref=e15]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "1. Getting Acquainted" [level=2] [ref=e21]
+        - paragraph [ref=e23]: Every project starts with a meeting. We explore your needs, preferences, and the way you use your space. Through an initial call and a visit to discover possibilities and direction, we follow up with a clear proposal and initial inspiration.
+      - img "Getting acquainted — initial meeting" [ref=e25]
+    - generic [ref=e28]:
+      - generic [ref=e30]:
+        - heading "2. Concept & Design" [level=2] [ref=e32]
+        - paragraph [ref=e34]: Ideas begin to take shape. We translate your inputs into a considered design, combining proven materials and atmosphere. You receive a visual concept that gives a clear sense of the final interior, the design refined through technical drawings.
+      - img "Concept & design sketch" [ref=e36]
+    - generic [ref=e39]:
+      - generic [ref=e41]:
+        - heading "3. Detailing" [level=2] [ref=e43]
+        - paragraph [ref=e45]: With the design set, we focus on precision. We take your measurements on site and develop the project into technical detail drawings, ensuring everything is prepared for a seamless execution.
+      - img "Detailing — craftsmanship" [ref=e47]
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - heading "4. Craft & Production" [level=2] [ref=e53]
+        - paragraph [ref=e55]: The design moves into production, where each element is handled with care and attention by our master craftsmen.
+      - img "Craft & production — workshop" [ref=e57]
+    - generic [ref=e60]:
+      - generic [ref=e62]:
+        - heading "5. Installation" [level=2] [ref=e64]
+        - paragraph [ref=e66]: We bring everything together on site. The final installation is executed with care and precision, resulting in a space that feels distinctive, personal, and complete.
+      - img "Installation — fitting" [ref=e68]
+  - contentinfo [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - img [ref=e72]
+        - generic [ref=e89]:
+          - paragraph [ref=e90]: Get in touch or make an appointment
+          - generic [ref=e91]:
+            - button "info@rift-furniture.nl" [ref=e92]
+            - generic: Email copied
+      - navigation [ref=e93]:
+        - link "Instagram" [ref=e94] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e95] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e101] [cursor=pointer]:
+    - img [ref=e102]
+  - alert [ref=e105]

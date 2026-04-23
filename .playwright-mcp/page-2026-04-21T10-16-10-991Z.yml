@@ -1,0 +1,64 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - navigation [ref=e10]:
+        - link "Projects" [ref=e11] [cursor=pointer]:
+          - /url: /projects
+          - text: Projects
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+          - text: About
+        - link "Process" [ref=e13] [cursor=pointer]:
+          - /url: /process
+          - text: Process
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact
+          - text: Contact
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "1. Getting Acquainted" [level=2] [ref=e22]
+        - paragraph [ref=e24]: Every project starts with a meeting. We explore your needs, preferences, and the way you use your space. Through an initial call and a visit to discover possibilities and direction, we follow up with a clear proposal and initial inspiration.
+      - img "Getting acquainted — initial meeting" [ref=e26]
+    - generic [ref=e29]:
+      - generic [ref=e31]:
+        - heading "2. Concept & Design" [level=2] [ref=e33]
+        - paragraph [ref=e35]: Ideas begin to take shape. We translate your inputs into a considered design, combining proven materials and atmosphere. You receive a visual concept that gives a clear sense of the final interior, the design refined through technical drawings.
+      - img "Concept & design sketch" [ref=e37]
+      - img "Concept & design detail" [ref=e39]
+    - generic [ref=e42]:
+      - generic [ref=e44]:
+        - heading "3. Detailing" [level=2] [ref=e46]
+        - paragraph [ref=e48]: With the design set, we focus on precision. We take your measurements on site and develop the project into technical detail drawings, ensuring everything is prepared for a seamless execution.
+      - img "Detailing — craftsmanship" [ref=e50]
+      - img "Detailing — joinery" [ref=e52]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - heading "4. Craft & Production" [level=2] [ref=e58]
+        - paragraph [ref=e60]: The design moves into production, where each element is handled with care and attention by our master craftsmen.
+      - img "Craft & production — workshop" [ref=e62]
+    - generic [ref=e65]:
+      - generic [ref=e67]:
+        - heading "5. Installation" [level=2] [ref=e69]
+        - paragraph [ref=e71]: We bring everything together on site. The final installation is executed with care and precision, resulting in a space that feels distinctive, personal, and complete.
+      - img "Installation — fitting" [ref=e73]
+      - img "Installation — completion" [ref=e75]
+  - contentinfo [ref=e76]:
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - img [ref=e79]
+        - generic [ref=e96]:
+          - paragraph [ref=e97]: Get in touch or make an appointment
+          - generic [ref=e98]:
+            - button "info@rift-furniture.nl" [ref=e99]
+            - generic: Email copied
+      - navigation [ref=e100]:
+        - link "Instagram" [ref=e101] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e102] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e108] [cursor=pointer]:
+    - img [ref=e109]

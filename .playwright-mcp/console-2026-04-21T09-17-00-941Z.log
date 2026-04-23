@@ -1,0 +1,10 @@
+[     258ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     305ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     348ms] [WARNING] Image with src "/_next/static/media/Tom Bremer_Rift x Janita_Emmastraat_HR-3.07wvkx.hsemq8.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     354ms] [WARNING] Image with src "/_next/static/media/Tom Bremer_Rift x Janita_Emmastraat_HR-9.0la43f_.binec.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  207936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  209066ms] [LOG] [Fast Refresh] done in 1020ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  209271ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  209574ms] [LOG] [Fast Refresh] done in 405ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  249875ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[  250056ms] [LOG] [Fast Refresh] done in 86ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431

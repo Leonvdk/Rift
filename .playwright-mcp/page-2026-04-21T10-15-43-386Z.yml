@@ -1,0 +1,34 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - button "Open menu" [ref=e10]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - img "Janita Emmastraat — project overview" [ref=e17]
+      - heading "Janita Emmastraat" [level=1] [ref=e21]
+    - generic [ref=e24]:
+      - paragraph [ref=e28]: At Rift, we create interiors where design, craftsmanship & detail come together. From the first idea to the final finish we transform ideas into refined and distinctive interiors.
+      - img "Janita Emmastraat — furniture detail" [ref=e30]
+    - generic [ref=e33]:
+      - paragraph [ref=e36]: We believe that exceptional interiors start with listening & understanding. At Rift we strive to create spaces that are timeless, thoughtful & refined. Crafted to be lived in and enjoyed every day.
+      - img "Janita Emmastraat — craftsmanship detail" [ref=e38]
+  - contentinfo [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Get in touch or make an appointment
+          - generic [ref=e61]:
+            - button "info@rift-furniture.nl" [ref=e62]
+            - generic: Email copied
+      - navigation [ref=e63]:
+        - link "Instagram" [ref=e64] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e65] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e71] [cursor=pointer]:
+    - img [ref=e72]
+  - alert [ref=e75]

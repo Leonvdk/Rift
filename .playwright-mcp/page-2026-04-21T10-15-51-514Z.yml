@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - button "Open menu" [ref=e10]
+  - main [ref=e15]:
+    - generic [ref=e18]:
+      - link "Janita Emmastraat Janita Emmastraat" [ref=e20] [cursor=pointer]:
+        - /url: /projects/janita-emmastraat
+        - img "Janita Emmastraat" [ref=e22]
+        - paragraph [ref=e23]: Janita Emmastraat
+      - link "Villa Bergen Villa Bergen" [ref=e25] [cursor=pointer]:
+        - /url: /projects/villa-bergen
+        - img "Villa Bergen" [ref=e27]
+        - paragraph [ref=e28]: Villa Bergen
+      - link "Studio Haarlem Studio Haarlem" [ref=e30] [cursor=pointer]:
+        - /url: /projects/studio-haarlem
+        - img "Studio Haarlem" [ref=e32]
+        - paragraph [ref=e33]: Studio Haarlem
+      - link "Woning Alkmaar Woning Alkmaar" [ref=e35] [cursor=pointer]:
+        - /url: /projects/woning-alkmaar
+        - img "Woning Alkmaar" [ref=e37]
+        - paragraph [ref=e38]: Woning Alkmaar
+      - link "Atelier Amstel Atelier Amstel" [ref=e40] [cursor=pointer]:
+        - /url: /projects/atelier-amstel
+        - img "Atelier Amstel" [ref=e42]
+        - paragraph [ref=e43]: Atelier Amstel
+      - link "Loft Jordaan Loft Jordaan" [ref=e45] [cursor=pointer]:
+        - /url: /projects/loft-jordaan
+        - img "Loft Jordaan" [ref=e47]
+        - paragraph [ref=e48]: Loft Jordaan
+  - contentinfo [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - generic [ref=e69]:
+          - paragraph [ref=e70]: Get in touch or make an appointment
+          - generic [ref=e71]:
+            - button "info@rift-furniture.nl" [ref=e72]
+            - generic: Email copied
+      - navigation [ref=e73]:
+        - link "Instagram" [ref=e74] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e75] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e81] [cursor=pointer]:
+    - img [ref=e82]
+  - alert [ref=e85]

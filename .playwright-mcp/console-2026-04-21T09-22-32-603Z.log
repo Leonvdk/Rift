@@ -1,0 +1,9 @@
+[     219ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     251ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[     287ms] [WARNING] Image with src "/_next/static/media/Tom Bremer_Rift x Janita_Emmastraat_HR-6.0gj3bh1fz~qr5.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2440093ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2440662ms] [LOG] [Fast Refresh] done in 353ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2453731ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2453814ms] [LOG] [Fast Refresh] done in 42ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2462058ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431
+[ 2462084ms] [LOG] [Fast Refresh] done in 63ms @ http://localhost:3000/_next/static/chunks/0whz_next_dist_043sq~v._.js:2431

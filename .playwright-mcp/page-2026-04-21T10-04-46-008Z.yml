@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Rift — Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - navigation [ref=e10]:
+        - link "Projects" [ref=e11] [cursor=pointer]:
+          - /url: /projects
+          - text: Projects
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+          - text: About
+        - link "Process" [ref=e13] [cursor=pointer]:
+          - /url: /process
+          - text: Process
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+          - text: Contact
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Rift Furniture
+          - paragraph [ref=e24]: +31 (0) 6 57 56 48 93
+          - paragraph [ref=e25]: info@rift-furniture.nl
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: "Your Email:"
+            - textbox "Your Email:" [ref=e30]
+          - generic [ref=e31]:
+            - generic [ref=e32]: "Your Message:"
+            - textbox "Your Message:" [ref=e33]
+          - paragraph [ref=e34]:
+            - text: Sent your message
+            - button "here" [ref=e35]
+      - img "Rift interior detail" [ref=e37]
+  - contentinfo [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - img [ref=e41]
+        - generic [ref=e58]:
+          - paragraph [ref=e59]: Get in touch or make an appointment
+          - paragraph [ref=e60]: info@rift-furniture.nl
+      - navigation [ref=e61]:
+        - link "Instagram" [ref=e62] [cursor=pointer]:
+          - /url: https://www.instagram.com/rift.furniture/
+        - link "Contact" [ref=e63] [cursor=pointer]:
+          - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e69] [cursor=pointer]:
+    - img [ref=e70]
+  - alert [ref=e73]
