@@ -57,9 +57,15 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="self-start border border-aubergine bg-transparent px-10 py-3 text-xs font-medium uppercase tracking-[0.2em] text-aubergine transition-colors duration-300 hover:bg-aubergine hover:text-cream"
+                  className="group -mt-4 inline-flex cursor-pointer items-center gap-2 self-start text-[clamp(0.938rem,1.1vw,1.125rem)] font-medium leading-relaxed transition-opacity duration-300 hover:opacity-60"
                 >
                   Send message
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  >
+                    &rarr;
+                  </span>
                 </button>
               </form>
             </FadeIn>
