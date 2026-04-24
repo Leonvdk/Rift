@@ -56,7 +56,7 @@ async function ProjectsContent({
                     alt={project.title}
                     fill
                     placeholder="blur"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="scale-[1.03] object-cover transition-transform duration-700 ease-out group-hover:scale-100"
                   />
                 </div>
                 <p className="mt-3 text-[15px] font-light [text-shadow:0_0_0_transparent] transition-[text-shadow] duration-700 ease-out group-hover:[text-shadow:0.3px_0_0_currentColor,-0.3px_0_0_currentColor] md:mt-4">

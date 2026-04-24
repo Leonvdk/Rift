@@ -36,7 +36,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 lg:py-36">
         <div className="rift-container">
           <FadeIn direction="side">
-            <h2 className="mb-8 font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-light leading-none md:mb-12">
+            <h2 className="mb-6 font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-light leading-none md:mb-8">
               We are Rift
             </h2>
           </FadeIn>
