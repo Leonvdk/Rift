@@ -45,9 +45,15 @@ export default function HomePage() {
             <div className="md:col-span-1">
               <FadeIn direction="up" delay={150}>
                 <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                  At Rift, we create interiors where design, craftsmanship &amp;
-                  detail come together. From the first idea to the final finish
-                  we transform ideas into refined and distinctive interiors.
+                  At Rift, we create interiors where design, craftsmanship and
+                  attention to detail come together as one. From the first
+                  sketch to final realization, we transform ideas into refined
+                  and distinctive spaces where form and function converge.
+                </p>
+                <p className="mt-6 text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+                  Each interior is defined by a strong design vision, refined
+                  materials and meticulous finishing down to the smallest
+                  details.
                 </p>
               </FadeIn>
             </div>
@@ -78,10 +84,10 @@ export default function HomePage() {
               <div>
                 <FadeIn direction="up">
                   <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                    We believe that exceptional interiors start with listening
-                    &amp; understanding. At Rift we strive to create spaces that
-                    are timeless, thoughtful &amp; refined. Crafted to be lived
-                    in and enjoyed every day.
+                    We believe exceptional interiors begin with listening and
+                    understanding. At Rift, we create spaces that are timeless,
+                    thoughtful and balanced. Crafted to be lived in and
+                    enjoyed, every day.
                   </p>
                 </FadeIn>
                 <FadeIn direction="up" delay={150}>

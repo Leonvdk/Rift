@@ -10,7 +10,7 @@ import img5 from "@/public/images/rift-x-janita/Tom Bremer_Rift x Janita_Emmastr
 import img6 from "@/public/images/rift-x-janita/Tom Bremer_Rift x Janita_Emmastraat_HR-14.jpg"
 
 const projects = [
-  { slug: "janita-emmastraat", title: "Janita Emmastraat", image: img1 },
+  { slug: "guestroom-amsterdam", title: "Guestroom Amsterdam", image: img1 },
   { slug: "villa-bergen", title: "Villa Bergen", image: img2 },
   { slug: "studio-haarlem", title: "Studio Haarlem", image: img3 },
   { slug: "woning-alkmaar", title: "Woning Alkmaar", image: img4 },

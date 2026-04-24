@@ -1,11 +1,16 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
 import { FadeIn } from "@/components/fade-in"
 
 import contactImg from "@/public/images/rift-x-janita/Tom Bremer_Rift x Janita_Emmastraat_HR-6.jpg"
 
+type FormStatus = "idle" | "success" | "error"
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<FormStatus>("idle")
+
   return (
     <section className="py-16 md:py-24 lg:py-28">
       <div className="rift-container">
@@ -55,20 +60,60 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="group -mt-4 inline-flex cursor-pointer items-center gap-2 self-start text-[clamp(0.938rem,1.1vw,1.125rem)] font-medium leading-relaxed transition-opacity duration-300 hover:opacity-60"
-                >
-                  Send message
-                  <span
-                    aria-hidden="true"
-                    className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1"
+                {status !== "success" && (
+                  <button
+                    type="submit"
+                    className="group -mt-4 inline-flex cursor-pointer items-center gap-2 self-start text-[clamp(0.938rem,1.1vw,1.125rem)] font-medium leading-relaxed transition-opacity duration-300 hover:opacity-60"
                   >
-                    &rarr;
-                  </span>
-                </button>
+                    Send message
+                    <span
+                      aria-hidden="true"
+                      className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1"
+                    >
+                      &rarr;
+                    </span>
+                  </button>
+                )}
+
+                <div
+                  aria-live="polite"
+                  className={`-mt-4 text-[clamp(0.938rem,1.1vw,1.125rem)] leading-relaxed transition-opacity duration-500 ${
+                    status === "idle" ? "h-0 opacity-0" : "opacity-100"
+                  } ${status === "error" ? "text-[#a64040]" : ""}`}
+                >
+                  {status === "success" &&
+                    "Thank you — your message has been sent."}
+                  {status === "error" &&
+                    "Something went wrong. Please try again or email us directly."}
+                </div>
               </form>
             </FadeIn>
+
+            {/* TEMPORARY — state testing */}
+            <div className="mt-10 flex gap-4 border-t border-aubergine/20 pt-6 text-xs uppercase tracking-[0.15em]">
+              <span className="opacity-50">Test states:</span>
+              <button
+                type="button"
+                onClick={() => setStatus("idle")}
+                className="cursor-pointer underline-offset-4 hover:underline"
+              >
+                Idle
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatus("success")}
+                className="cursor-pointer underline-offset-4 hover:underline"
+              >
+                Success
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatus("error")}
+                className="cursor-pointer underline-offset-4 hover:underline"
+              >
+                Error
+              </button>
+            </div>
           </div>
 
           {/* ── Right column — portrait image ── */}

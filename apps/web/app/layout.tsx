@@ -69,7 +69,7 @@ const basisGrotesque = localFont({
 export const metadata: Metadata = {
   title: "Rift — Interior, Craft & Design",
   description:
-    "At Rift, we create interiors where design, craftsmanship & detail come together. From the first idea to the final finish we transform ideas into refined and distinctive interiors.",
+    "At Rift, we create interiors where design, craftsmanship and attention to detail come together as one. From the first sketch to final realization, we transform ideas into refined and distinctive spaces where form and function converge.",
 }
 
 export default function RootLayout({
