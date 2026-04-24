@@ -47,7 +47,7 @@ export default async function ProjectPage({
               </h1>
             </FadeIn>
             <FadeIn direction="up" delay={100}>
-              <p className="max-w-[35%] text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+              <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed lg:max-w-[35%]">
                 For this guest room in Amsterdam, a multifunctional space was
                 created in the basement, making optimal use of a compact area as
                 both a home gym and guest room.
