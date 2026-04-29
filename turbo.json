@@ -1,5 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "DATABASE_URL",
+    "PAYLOAD_SECRET",
+    "NEXT_PUBLIC_SERVER_URL",
+    "rift_BLOB_READ_WRITE_TOKEN",
+    "NODE_ENV"
+  ],
   "tasks": {
     "dev": {
       "cache": false,
