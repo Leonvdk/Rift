@@ -28,7 +28,7 @@ export const FloatedImagePairBlock: Block = {
       localized: true,
       labels: { singular: "Paragraph", plural: "Paragraphs" },
       admin: { description: "Body copy that wraps around the images on desktop." },
-      fields: [{ name: "text", type: "richText", required: true }],
+      fields: [{ name: "text", type: "textarea", required: true }],
     },
   ],
 }

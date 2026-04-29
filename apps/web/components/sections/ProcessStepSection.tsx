@@ -1,13 +1,12 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { RichText, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
   stepNumber?: string | null
   title?: string | null
-  description?: RichTextValue
+  description?: string | null
   imagePosition?: ("left" | "right") | null
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
@@ -63,10 +62,9 @@ export function ProcessStepSection({
               <div>
                 <FadeIn direction="side">{headingMarkup}</FadeIn>
                 <FadeIn direction="up" delay={150}>
-                  <RichText
-                    data={description}
-                    className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
-                  />
+                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+                    {description}
+                  </p>
                 </FadeIn>
               </div>
             </div>
@@ -121,10 +119,9 @@ export function ProcessStepSection({
               {headingMarkup}
             </FadeIn>
             <FadeIn direction="up" delay={200}>
-              <RichText
-                data={description}
-                className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
-              />
+              <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+                {description}
+              </p>
             </FadeIn>
           </div>
 

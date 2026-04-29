@@ -237,21 +237,7 @@ export interface Page {
             /**
              * Tagline shown over the image, e.g. 'Interior, Craft & Design'.
              */
-            caption?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            caption?: string | null;
             /**
              * Show the Rift starburst above the caption.
              */
@@ -268,41 +254,13 @@ export interface Page {
             /**
              * Optional heading shown above the columns.
              */
-            heading?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            heading?: string | null;
             /**
              * Body copy. Each entry renders as its own paragraph.
              */
             paragraphs?:
               | {
-                  text: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  text: string;
                   id?: string | null;
                 }[]
               | null;
@@ -335,39 +293,11 @@ export interface Page {
             /**
              * Paragraph shown above the quote.
              */
-            leadingText?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            leadingText?: string | null;
             /**
              * Short quote, e.g. 'Where ideas take shape in timeless interiors'.
              */
-            quote?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            quote?: string | null;
             /**
              * Label shown before the quote, e.g. 'RIFT'.
              */
@@ -399,21 +329,7 @@ export interface Page {
              */
             stepNumber?: string | null;
             title?: string | null;
-            description: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            description: string;
             imagePosition?: ('right' | 'left') | null;
             /**
              * Always shown.
@@ -436,38 +352,10 @@ export interface Page {
              * Show or hide this section.
              */
             enabled?: boolean | null;
-            heading?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            heading?: string | null;
             paragraphs?:
               | {
-                  text: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  text: string;
                   id?: string | null;
                 }[]
               | null;
@@ -509,21 +397,7 @@ export interface Project {
   /**
    * Short paragraph below the hero.
    */
-  intro: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
+  intro: string;
   /**
    * Body of the project page, composed of blocks.
    */
@@ -537,41 +411,13 @@ export interface Project {
             /**
              * Optional heading shown above the columns.
              */
-            heading?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            heading?: string | null;
             /**
              * Body copy. Each entry renders as its own paragraph.
              */
             paragraphs?:
               | {
-                  text: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  text: string;
                   id?: string | null;
                 }[]
               | null;
@@ -614,21 +460,7 @@ export interface Project {
              */
             paragraphs?:
               | {
-                  text: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  text: string;
                   id?: string | null;
                 }[]
               | null;
@@ -641,38 +473,10 @@ export interface Project {
              * Show or hide this section.
              */
             enabled?: boolean | null;
-            heading?: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
+            heading?: string | null;
             paragraphs?:
               | {
-                  text: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  text: string;
                   id?: string | null;
                 }[]
               | null;

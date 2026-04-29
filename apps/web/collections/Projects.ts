@@ -80,7 +80,7 @@ export const Projects: CollectionConfig = {
     },
     {
       name: "intro",
-      type: "richText",
+      type: "textarea",
       localized: true,
       required: true,
       admin: { description: "Short paragraph below the hero." },

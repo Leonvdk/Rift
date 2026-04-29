@@ -1,13 +1,12 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { RichText, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
-  paragraphs?: { text: RichTextValue; id?: string | null }[] | null
+  paragraphs?: { text: string; id?: string | null }[] | null
 }
 
 export function FloatedImagePairSection({
@@ -57,13 +56,14 @@ export function FloatedImagePairSection({
 
         <FadeIn direction="up">
           {paragraphs?.map((p, i) => (
-            <RichText
+            <p
               key={p.id ?? i}
-              data={p.text}
               className={`text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed ${
                 i > 0 ? "mt-6" : ""
               }`}
-            />
+            >
+              {p.text}
+            </p>
           ))}
         </FadeIn>
 

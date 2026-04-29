@@ -1,20 +1,18 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
 import { RiftStarburst } from "@/components/rift-starburst"
-import { RichText, isRichTextEmpty, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
   image?: number | Media | null
-  caption?: RichTextValue
+  caption?: string | null
   showStarburst?: boolean | null
 }
 
 export function HeroSection({ image, caption, showStarburst }: Props) {
   const url = getMediaUrl(image)
-  const alt = getMediaAlt(image, "Rift")
-  const hasCaption = !isRichTextEmpty(caption)
+  const alt = getMediaAlt(image, caption ?? "Rift")
 
   return (
     <section className="relative h-[75vh] min-h-[480px] overflow-hidden bg-aubergine md:h-[85vh]">
@@ -36,13 +34,11 @@ export function HeroSection({ image, caption, showStarburst }: Props) {
         {showStarburst !== false && (
           <RiftStarburst className="mb-6 h-20 w-20 text-cream md:mb-8 md:h-28 md:w-28 lg:h-32 lg:w-32" />
         )}
-        {hasCaption && (
+        {caption && (
           <FadeIn direction="fade" delay={1700}>
-            <RichText
-              data={caption}
-              tag="h1"
-              className="font-sans text-[clamp(1.625rem,5vw,2.625rem)] font-normal tracking-normal leading-none"
-            />
+            <h1 className="font-sans text-[clamp(1.625rem,5vw,2.625rem)] font-normal tracking-normal leading-none">
+              {caption}
+            </h1>
           </FadeIn>
         )}
       </div>

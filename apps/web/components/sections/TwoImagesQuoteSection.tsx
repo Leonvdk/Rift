@@ -1,12 +1,11 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { RichText, isRichTextEmpty, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
-  leadingText?: RichTextValue
-  quote?: RichTextValue
+  leadingText?: string | null
+  quote?: string | null
   attributionLabel?: string | null
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
@@ -44,26 +43,19 @@ export function TwoImagesQuoteSection({
             className={`flex ${alignClass} ${quoteOnRight ? "md:order-last" : ""}`}
           >
             <div>
-              {!isRichTextEmpty(leadingText) && (
+              {leadingText && (
                 <FadeIn direction="up">
-                  <RichText
-                    data={leadingText}
-                    className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
-                  />
+                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
+                    {leadingText}
+                  </p>
                 </FadeIn>
               )}
-              {(attributionLabel || !isRichTextEmpty(quote)) && (
+              {(attributionLabel || quote) && (
                 <FadeIn direction="up" delay={150}>
-                  <div className="mt-10 font-sans text-[clamp(1.063rem,1.3vw,1.25rem)] font-medium">
-                    {attributionLabel && <span>{attributionLabel} </span>}
-                    {!isRichTextEmpty(quote) && (
-                      <span className="inline">
-                        &ldquo;
-                        <RichText data={quote} tag="span" />
-                        &rdquo;
-                      </span>
-                    )}
-                  </div>
+                  <p className="mt-10 font-sans text-[clamp(1.063rem,1.3vw,1.25rem)] font-medium">
+                    {attributionLabel && <>{attributionLabel} </>}
+                    {quote && <>&ldquo;{quote}&rdquo;</>}
+                  </p>
                 </FadeIn>
               )}
             </div>

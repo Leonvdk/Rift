@@ -22,7 +22,7 @@ export const ProcessStepBlock: Block = {
     },
     {
       name: "description",
-      type: "richText",
+      type: "textarea",
       required: true,
       localized: true,
     },
