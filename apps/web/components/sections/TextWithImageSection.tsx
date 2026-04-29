@@ -1,11 +1,12 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
+import { RichText, isRichTextEmpty, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
-  heading?: string | null
-  paragraphs?: { text: string; id?: string | null }[] | null
+  heading?: RichTextValue
+  paragraphs?: { text: RichTextValue; id?: string | null }[] | null
   image?: number | Media | null
   video?: number | Media | null
   imagePosition?: ("left" | "right") | null
@@ -30,7 +31,8 @@ export function TextWithImageSection({
 }: Props) {
   const imageUrl = getMediaUrl(image)
   const videoUrl = getMediaUrl(video)
-  const alt = getMediaAlt(image, heading ?? "")
+  const alt = getMediaAlt(image, "")
+  const hasHeading = !isRichTextEmpty(heading)
   const textOnLeft = imagePosition !== "left"
   const isQuarter = ratio === "quarter"
   const alignClass = ALIGN_CLASS[textVerticalAlign ?? "center"]
@@ -48,11 +50,13 @@ export function TextWithImageSection({
   return (
     <section className="py-7 md:py-9 lg:py-12">
       <div className="rift-container">
-        {heading && (
+        {hasHeading && (
           <FadeIn direction="side">
-            <h2 className="mb-6 font-sans text-[clamp(1.9375rem,5vw,3.4375rem)] font-normal tracking-normal leading-none md:mb-8">
-              {heading}
-            </h2>
+            <RichText
+              data={heading}
+              tag="h2"
+              className="mb-6 font-sans text-[clamp(1.9375rem,5vw,3.4375rem)] font-normal tracking-normal leading-none md:mb-8"
+            />
           </FadeIn>
         )}
 
@@ -65,13 +69,12 @@ export function TextWithImageSection({
             <div>
               {paragraphs?.map((p, i) => (
                 <FadeIn key={p.id ?? i} direction="up" delay={150 + i * 50}>
-                  <p
+                  <RichText
+                    data={p.text}
                     className={`text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed ${
                       i > 0 ? "mt-6" : ""
                     }`}
-                  >
-                    {p.text}
-                  </p>
+                  />
                 </FadeIn>
               ))}
             </div>

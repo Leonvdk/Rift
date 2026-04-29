@@ -1,12 +1,13 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
+import { RichText, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
   stepNumber?: string | null
-  title: string
-  description: string
+  title?: string | null
+  description?: RichTextValue
   imagePosition?: ("left" | "right") | null
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
@@ -36,8 +37,8 @@ export function ProcessStepSection({
 }: Props) {
   const url1 = getMediaUrl(imageOne)
   const url2 = getMediaUrl(imageTwo)
-  const alt1 = getMediaAlt(imageOne, title)
-  const alt2 = getMediaAlt(imageTwo, title)
+  const alt1 = getMediaAlt(imageOne, title ?? "")
+  const alt2 = getMediaAlt(imageTwo, title ?? "")
   const imageOnLeft = imagePosition === "left"
   const isDouble = Boolean(imageTwo)
   const align = textVerticalAlign ?? "center"
@@ -62,9 +63,10 @@ export function ProcessStepSection({
               <div>
                 <FadeIn direction="side">{headingMarkup}</FadeIn>
                 <FadeIn direction="up" delay={150}>
-                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                    {description}
-                  </p>
+                  <RichText
+                    data={description}
+                    className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
+                  />
                 </FadeIn>
               </div>
             </div>
@@ -119,9 +121,10 @@ export function ProcessStepSection({
               {headingMarkup}
             </FadeIn>
             <FadeIn direction="up" delay={200}>
-              <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                {description}
-              </p>
+              <RichText
+                data={description}
+                className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
+              />
             </FadeIn>
           </div>
 

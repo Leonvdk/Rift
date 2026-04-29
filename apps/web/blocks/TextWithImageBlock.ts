@@ -12,7 +12,7 @@ export const TextWithImageBlock: Block = {
     },
     {
       name: "heading",
-      type: "text",
+      type: "richText",
       localized: true,
       admin: { description: "Optional heading shown above the columns." },
     },
@@ -22,7 +22,7 @@ export const TextWithImageBlock: Block = {
       localized: true,
       labels: { singular: "Paragraph", plural: "Paragraphs" },
       admin: { description: "Body copy. Each entry renders as its own paragraph." },
-      fields: [{ name: "text", type: "textarea", required: true }],
+      fields: [{ name: "text", type: "richText", required: true }],
     },
     {
       name: "image",

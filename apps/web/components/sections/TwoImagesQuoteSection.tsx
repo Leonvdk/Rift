@@ -1,11 +1,12 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
+import { RichText, isRichTextEmpty, type RichTextValue } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
-  leadingText?: string | null
-  quote?: string | null
+  leadingText?: RichTextValue
+  quote?: RichTextValue
   attributionLabel?: string | null
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
@@ -43,19 +44,26 @@ export function TwoImagesQuoteSection({
             className={`flex ${alignClass} ${quoteOnRight ? "md:order-last" : ""}`}
           >
             <div>
-              {leadingText && (
+              {!isRichTextEmpty(leadingText) && (
                 <FadeIn direction="up">
-                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
-                    {leadingText}
-                  </p>
+                  <RichText
+                    data={leadingText}
+                    className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed"
+                  />
                 </FadeIn>
               )}
-              {(attributionLabel || quote) && (
+              {(attributionLabel || !isRichTextEmpty(quote)) && (
                 <FadeIn direction="up" delay={150}>
-                  <p className="mt-10 font-sans text-[clamp(1.063rem,1.3vw,1.25rem)] font-medium">
-                    {attributionLabel && <>{attributionLabel} </>}
-                    {quote && <>&ldquo;{quote}&rdquo;</>}
-                  </p>
+                  <div className="mt-10 font-sans text-[clamp(1.063rem,1.3vw,1.25rem)] font-medium">
+                    {attributionLabel && <span>{attributionLabel} </span>}
+                    {!isRichTextEmpty(quote) && (
+                      <span className="inline">
+                        &ldquo;
+                        <RichText data={quote} tag="span" />
+                        &rdquo;
+                      </span>
+                    )}
+                  </div>
                 </FadeIn>
               )}
             </div>

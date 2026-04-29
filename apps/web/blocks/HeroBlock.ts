@@ -18,7 +18,7 @@ export const HeroBlock: Block = {
     },
     {
       name: "caption",
-      type: "text",
+      type: "richText",
       localized: true,
       admin: { description: "Tagline shown over the image, e.g. 'Interior, Craft & Design'." },
     },

@@ -41,7 +41,6 @@ export const Projects: CollectionConfig = {
     {
       name: "title",
       type: "text",
-      required: true,
       localized: true,
     },
     {
@@ -81,7 +80,7 @@ export const Projects: CollectionConfig = {
     },
     {
       name: "intro",
-      type: "textarea",
+      type: "richText",
       localized: true,
       required: true,
       admin: { description: "Short paragraph below the hero." },
@@ -96,7 +95,7 @@ export const Projects: CollectionConfig = {
       name: "meta",
       type: "group",
       fields: [
-        { name: "title", type: "text", localized: true, required: true },
+        { name: "title", type: "text", localized: true },
         { name: "description", type: "textarea", localized: true, required: true },
         { name: "image", type: "upload", relationTo: "media" },
       ],

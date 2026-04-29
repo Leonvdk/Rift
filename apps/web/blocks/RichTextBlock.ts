@@ -12,7 +12,7 @@ export const RichTextBlock: Block = {
     },
     {
       name: "heading",
-      type: "text",
+      type: "richText",
       localized: true,
     },
     {
@@ -20,7 +20,7 @@ export const RichTextBlock: Block = {
       type: "array",
       localized: true,
       labels: { singular: "Paragraph", plural: "Paragraphs" },
-      fields: [{ name: "text", type: "textarea", required: true }],
+      fields: [{ name: "text", type: "richText", required: true }],
     },
   ],
 }

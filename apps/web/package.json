@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "PAYLOAD_CONFIG_PATH=payload.config.ts payload migrate --force-accept-warning && next build",
+    "build": "PAYLOAD_CONFIG_PATH=payload.config.ts sh -c 'yes | payload migrate --force-accept-warning' && next build",
     "start": "next start",
     "payload": "PAYLOAD_CONFIG_PATH=payload.config.ts payload",
     "generate:types": "PAYLOAD_CONFIG_PATH=payload.config.ts payload generate:types",

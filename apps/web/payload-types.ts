@@ -214,7 +214,7 @@ export interface Media {
  */
 export interface Page {
   id: number;
-  title: string;
+  title?: string | null;
   /**
    * URL path. Use 'home' for the homepage. Same across locales.
    */
@@ -237,7 +237,21 @@ export interface Page {
             /**
              * Tagline shown over the image, e.g. 'Interior, Craft & Design'.
              */
-            caption?: string | null;
+            caption?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             /**
              * Show the Rift starburst above the caption.
              */
@@ -254,13 +268,41 @@ export interface Page {
             /**
              * Optional heading shown above the columns.
              */
-            heading?: string | null;
+            heading?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             /**
              * Body copy. Each entry renders as its own paragraph.
              */
             paragraphs?:
               | {
-                  text: string;
+                  text: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -293,11 +335,39 @@ export interface Page {
             /**
              * Paragraph shown above the quote.
              */
-            leadingText?: string | null;
+            leadingText?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             /**
              * Short quote, e.g. 'Where ideas take shape in timeless interiors'.
              */
-            quote?: string | null;
+            quote?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             /**
              * Label shown before the quote, e.g. 'RIFT'.
              */
@@ -328,8 +398,22 @@ export interface Page {
              * Optional prefix shown before the title, e.g. '1.'
              */
             stepNumber?: string | null;
-            title: string;
-            description: string;
+            title?: string | null;
+            description: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
             imagePosition?: ('right' | 'left') | null;
             /**
              * Always shown.
@@ -352,10 +436,38 @@ export interface Page {
              * Show or hide this section.
              */
             enabled?: boolean | null;
-            heading?: string | null;
+            heading?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             paragraphs?:
               | {
-                  text: string;
+                  text: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -366,7 +478,7 @@ export interface Page {
       )[]
     | null;
   meta: {
-    title: string;
+    title?: string | null;
     description: string;
     image?: (number | null) | Media;
   };
@@ -380,7 +492,7 @@ export interface Page {
  */
 export interface Project {
   id: number;
-  title: string;
+  title?: string | null;
   /**
    * URL path under /projects/. Same across locales.
    */
@@ -397,7 +509,21 @@ export interface Project {
   /**
    * Short paragraph below the hero.
    */
-  intro: string;
+  intro: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   /**
    * Body of the project page, composed of blocks.
    */
@@ -411,13 +537,41 @@ export interface Project {
             /**
              * Optional heading shown above the columns.
              */
-            heading?: string | null;
+            heading?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             /**
              * Body copy. Each entry renders as its own paragraph.
              */
             paragraphs?:
               | {
-                  text: string;
+                  text: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -460,7 +614,21 @@ export interface Project {
              */
             paragraphs?:
               | {
-                  text: string;
+                  text: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -473,10 +641,38 @@ export interface Project {
              * Show or hide this section.
              */
             enabled?: boolean | null;
-            heading?: string | null;
+            heading?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
             paragraphs?:
               | {
-                  text: string;
+                  text: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -487,7 +683,7 @@ export interface Project {
       )[]
     | null;
   meta: {
-    title: string;
+    title?: string | null;
     description: string;
     image?: (number | null) | Media;
   };

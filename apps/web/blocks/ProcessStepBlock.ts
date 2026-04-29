@@ -18,12 +18,11 @@ export const ProcessStepBlock: Block = {
     {
       name: "title",
       type: "text",
-      required: true,
       localized: true,
     },
     {
       name: "description",
-      type: "textarea",
+      type: "richText",
       required: true,
       localized: true,
     },

@@ -44,7 +44,6 @@ export const Pages: CollectionConfig = {
     {
       name: "title",
       type: "text",
-      required: true,
       localized: true,
     },
     {
@@ -84,7 +83,7 @@ export const Pages: CollectionConfig = {
       name: "meta",
       type: "group",
       fields: [
-        { name: "title", type: "text", localized: true, required: true },
+        { name: "title", type: "text", localized: true },
         { name: "description", type: "textarea", localized: true, required: true },
         { name: "image", type: "upload", relationTo: "media" },
       ],

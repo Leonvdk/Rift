@@ -3,6 +3,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/fade-in"
 import { BlockRenderer } from "@/components/BlockRenderer"
+import { RichText, isRichTextEmpty } from "@/components/rich-text"
 import { getMediaAlt, getMediaUrl } from "@/lib/media"
 import { getProjectBySlug } from "@/lib/payload"
 import { isLocale } from "@/lib/i18n"
@@ -50,7 +51,7 @@ export default async function ProjectPage({ params }: Args) {
         <div className="absolute inset-0 bg-black/20" />
       </section>
 
-      {(project.title || project.intro) && (
+      {(project.title || !isRichTextEmpty(project.intro)) && (
         <section className="pt-7 md:pt-10 lg:pt-20">
           <div className="rift-container">
             <div className="lg:ml-[100px]">
@@ -61,11 +62,12 @@ export default async function ProjectPage({ params }: Args) {
                   </h1>
                 </FadeIn>
               )}
-              {project.intro && (
+              {!isRichTextEmpty(project.intro) && (
                 <FadeIn direction="up" delay={100}>
-                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed lg:max-w-[35%]">
-                    {project.intro}
-                  </p>
+                  <RichText
+                    data={project.intro}
+                    className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed lg:max-w-[35%]"
+                  />
                 </FadeIn>
               )}
             </div>

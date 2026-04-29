@@ -12,13 +12,13 @@ export const TwoImagesQuoteBlock: Block = {
     },
     {
       name: "leadingText",
-      type: "textarea",
+      type: "richText",
       localized: true,
       admin: { description: "Paragraph shown above the quote." },
     },
     {
       name: "quote",
-      type: "text",
+      type: "richText",
       localized: true,
       admin: { description: "Short quote, e.g. 'Where ideas take shape in timeless interiors'." },
     },
