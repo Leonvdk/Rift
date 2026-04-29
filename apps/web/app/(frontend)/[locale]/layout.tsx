@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { LocaleSwitcher } from "@/components/locale-switcher"
 import { getFooter, getHeader } from "@/lib/payload"
 import { isLocale, LOCALES } from "@/lib/i18n"
 
@@ -43,6 +44,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         email={footer?.email}
         links={links && links.length > 0 ? links : undefined}
       />
+      <LocaleSwitcher locale={locale} />
     </>
   )
 }

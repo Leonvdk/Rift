@@ -3,12 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import {
-  LOCALES,
-  stripLocaleFromPath,
-  withLocale,
-  type Locale,
-} from "@/lib/i18n"
+import { stripLocaleFromPath, withLocale, type Locale } from "@/lib/i18n"
 
 type NavItem = { label: string; href: string }
 
@@ -82,30 +77,26 @@ export function Header({ locale, navItems }: Props) {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-end gap-8 md:flex">
-            <nav className="flex gap-8 pt-1 text-[15px] font-normal tracking-wide">
-              {items.map((item) => {
-                const href = localizedHref(item.href)
-                const isActive = currentBasePath === item.href
-                return (
-                  <Link
-                    key={item.href}
-                    href={href}
-                    className="nav-link group relative pb-0.5"
-                  >
-                    {item.label}
-                    <span
-                      className={`absolute bottom-0 left-0 h-px bg-current transition-[width] duration-300 ease-out ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    />
-                  </Link>
-                )
-              })}
-            </nav>
-
-            <LocaleSwitcher locale={locale} basePath={currentBasePath} />
-          </div>
+          <nav className="hidden gap-8 pt-1 text-[15px] font-normal tracking-wide md:flex">
+            {items.map((item) => {
+              const href = localizedHref(item.href)
+              const isActive = currentBasePath === item.href
+              return (
+                <Link
+                  key={item.href}
+                  href={href}
+                  className="nav-link group relative pb-0.5"
+                >
+                  {item.label}
+                  <span
+                    className={`absolute bottom-0 left-0 h-px bg-current transition-[width] duration-300 ease-out ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              )
+            })}
+          </nav>
 
           {/* Mobile hamburger */}
           <button
@@ -160,52 +151,8 @@ export function Header({ locale, navItems }: Props) {
               </Link>
             )
           })}
-
-          <div
-            className={`mt-4 transition-all duration-500 ease-out ${
-              open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
-            style={{ transitionDelay: open ? `${150 + items.length * 60}ms` : "0ms" }}
-            onClick={() => setOpen(false)}
-          >
-            <LocaleSwitcher locale={locale} basePath={currentBasePath} />
-          </div>
         </nav>
       </div>
     </>
-  )
-}
-
-function LocaleSwitcher({
-  locale,
-  basePath,
-}: {
-  locale: Locale
-  basePath: string
-}) {
-  return (
-    <div className="flex items-center gap-1.5 pt-1 text-[15px] font-normal uppercase tracking-[0.18em]">
-      {LOCALES.map((code, idx) => {
-        const isActive = code === locale
-        return (
-          <span key={code} className="contents">
-            {idx > 0 && <span className="opacity-40" aria-hidden="true">·</span>}
-            {isActive ? (
-              <span aria-current="true" className="opacity-100">
-                {code}
-              </span>
-            ) : (
-              <Link
-                href={withLocale(code, basePath)}
-                className="opacity-50 transition-opacity duration-200 hover:opacity-100"
-                aria-label={`Switch to ${code === "nl" ? "Nederlands" : "English"}`}
-              >
-                {code}
-              </Link>
-            )}
-          </span>
-        )
-      })}
-    </div>
   )
 }

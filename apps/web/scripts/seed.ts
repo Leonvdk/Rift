@@ -276,7 +276,7 @@ async function seed() {
       where: { slug: { equals: page.slug } },
       limit: 1,
     })
-    const data = {
+    const data: any = {
       title: page.title,
       slug: page.slug,
       status: "published" as const,
@@ -304,7 +304,7 @@ async function seed() {
       where: { slug: { equals: project.slug } },
       limit: 1,
     })
-    const data = {
+    const data: any = {
       title: project.title,
       slug: project.slug,
       status: "published" as const,
