@@ -1,11 +1,15 @@
 import type { GlobalConfig } from "payload"
 import { isAdminOrEditor } from "../lib/access.ts"
+import { revalidateLayout } from "../lib/revalidate.ts"
 
 export const Footer: GlobalConfig = {
   slug: "footer",
   access: {
     read: () => true,
     update: isAdminOrEditor,
+  },
+  hooks: {
+    afterChange: [() => revalidateLayout()],
   },
   fields: [
     {

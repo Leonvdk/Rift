@@ -40,6 +40,7 @@ export function BlockRenderer({ blocks }: Props) {
                 heading={block.heading}
                 paragraphs={block.paragraphs}
                 image={block.image}
+                video={block.video}
                 imagePosition={block.imagePosition}
                 ratio={block.ratio}
                 textVerticalAlign={block.textVerticalAlign}

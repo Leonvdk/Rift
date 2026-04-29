@@ -28,6 +28,17 @@ export const TextWithImageBlock: Block = {
       name: "image",
       type: "upload",
       relationTo: "media",
+      admin: { description: "Used unless a video is set below." },
+    },
+    {
+      name: "video",
+      type: "upload",
+      relationTo: "media",
+      filterOptions: { mimeType: { contains: "video" } },
+      admin: {
+        description:
+          "Optional. If set, replaces the image. Auto-plays muted on loop. The image above is used as a poster while the video loads.",
+      },
     },
     {
       name: "imagePosition",

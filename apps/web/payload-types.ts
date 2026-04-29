@@ -264,7 +264,14 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Used unless a video is set below.
+             */
             image?: (number | null) | Media;
+            /**
+             * Optional. If set, replaces the image. Auto-plays muted on loop. The image above is used as a poster while the video loads.
+             */
+            video?: (number | null) | Media;
             imagePosition?: ('right' | 'left') | null;
             /**
              * How wide the text column is relative to the image.
@@ -414,7 +421,14 @@ export interface Project {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Used unless a video is set below.
+             */
             image?: (number | null) | Media;
+            /**
+             * Optional. If set, replaces the image. Auto-plays muted on loop. The image above is used as a poster while the video loads.
+             */
+            video?: (number | null) | Media;
             imagePosition?: ('right' | 'left') | null;
             /**
              * How wide the text column is relative to the image.
@@ -673,6 +687,7 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               image?: T;
+              video?: T;
               imagePosition?: T;
               ratio?: T;
               textVerticalAlign?: T;
@@ -759,6 +774,7 @@ export interface ProjectsSelect<T extends boolean = true> {
                     id?: T;
                   };
               image?: T;
+              video?: T;
               imagePosition?: T;
               ratio?: T;
               textVerticalAlign?: T;

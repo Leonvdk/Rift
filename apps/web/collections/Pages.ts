@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload"
 import { isAdmin, isAdminOrEditor, publicReadOrLoggedIn } from "../lib/access.ts"
+import { revalidatePageSlug } from "../lib/revalidate.ts"
 import {
   HeroBlock,
   TextWithImageBlock,
@@ -22,6 +23,22 @@ export const Pages: CollectionConfig = {
   },
   versions: {
     drafts: true,
+  },
+  hooks: {
+    afterChange: [
+      ({ doc, previousDoc }) => {
+        if (doc.slug) revalidatePageSlug(doc.slug)
+        // Slug rename — also drop the old path so it's no longer cached.
+        if (previousDoc?.slug && previousDoc.slug !== doc.slug) {
+          revalidatePageSlug(previousDoc.slug)
+        }
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        if (doc?.slug) revalidatePageSlug(doc.slug)
+      },
+    ],
   },
   fields: [
     {

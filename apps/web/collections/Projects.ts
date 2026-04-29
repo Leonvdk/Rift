@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload"
 import { isAdmin, isAdminOrEditor, publicReadOrLoggedIn } from "../lib/access.ts"
+import { revalidateProjectSlug } from "../lib/revalidate.ts"
 import {
   TextWithImageBlock,
   FloatedImagePairBlock,
@@ -20,6 +21,21 @@ export const Projects: CollectionConfig = {
   },
   versions: {
     drafts: true,
+  },
+  hooks: {
+    afterChange: [
+      ({ doc, previousDoc }) => {
+        if (doc.slug) revalidateProjectSlug(doc.slug)
+        if (previousDoc?.slug && previousDoc.slug !== doc.slug) {
+          revalidateProjectSlug(previousDoc.slug)
+        }
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        if (doc?.slug) revalidateProjectSlug(doc.slug)
+      },
+    ],
   },
   fields: [
     {

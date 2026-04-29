@@ -7,6 +7,7 @@ type Props = {
   heading?: string | null
   paragraphs?: { text: string; id?: string | null }[] | null
   image?: number | Media | null
+  video?: number | Media | null
   imagePosition?: ("left" | "right") | null
   ratio?: ("third" | "quarter") | null
   textVerticalAlign?: ("top" | "center" | "bottom") | null
@@ -22,11 +23,13 @@ export function TextWithImageSection({
   heading,
   paragraphs,
   image,
+  video,
   imagePosition,
   ratio,
   textVerticalAlign,
 }: Props) {
-  const url = getMediaUrl(image)
+  const imageUrl = getMediaUrl(image)
+  const videoUrl = getMediaUrl(video)
   const alt = getMediaAlt(image, heading ?? "")
   const textOnLeft = imagePosition !== "left"
   const isQuarter = ratio === "quarter"
@@ -79,9 +82,20 @@ export function TextWithImageSection({
             delay={200}
             className={`relative aspect-[4/3] ${imageColSpan}`}
           >
-            {url ? (
+            {videoUrl ? (
+              <video
+                src={videoUrl}
+                poster={imageUrl ?? undefined}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : imageUrl ? (
               <Image
-                src={url}
+                src={imageUrl}
                 alt={alt}
                 fill
                 sizes={sizes}
