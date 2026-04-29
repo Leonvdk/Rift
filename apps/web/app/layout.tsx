@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import "./globals.css"
 
 const portrait = localFont({
@@ -80,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${portrait.variable} ${basisGrotesque.variable}`}>
       <body className="flex min-h-svh flex-col">
-        {/* SVG noise filter — referenced by the body::before grain overlay */}
+        {/* SVG noise filter — referenced by the body::before grain overlay in globals.css. Must be in the DOM. */}
         <svg className="absolute h-0 w-0" aria-hidden="true">
           <filter id="grain">
             <feTurbulence
@@ -91,10 +89,7 @@ export default function RootLayout({
             />
           </filter>
         </svg>
-
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   )

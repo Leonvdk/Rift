@@ -3,32 +3,63 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
+import {
+  LOCALES,
+  stripLocaleFromPath,
+  withLocale,
+  type Locale,
+} from "@/lib/i18n"
 
-const navItems = [
-  { label: "Projects", href: "/projects" },
-  { label: "About", href: "/about" },
-  { label: "Process", href: "/process" },
-  { label: "Contact", href: "/contact" },
-]
+type NavItem = { label: string; href: string }
 
-export function Header() {
+const FALLBACK_NAV: Record<Locale, NavItem[]> = {
+  nl: [
+    { label: "Projecten", href: "/projects" },
+    { label: "Over ons", href: "/about" },
+    { label: "Werkwijze", href: "/process" },
+    { label: "Contact", href: "/contact" },
+  ],
+  en: [
+    { label: "Projects", href: "/projects" },
+    { label: "About", href: "/about" },
+    { label: "Process", href: "/process" },
+    { label: "Contact", href: "/contact" },
+  ],
+}
+
+type Props = {
+  locale: Locale
+  navItems?: NavItem[]
+}
+
+export function Header({ locale, navItems }: Props) {
+  const items = navItems && navItems.length > 0 ? navItems : FALLBACK_NAV[locale]
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : ""
-    return () => { document.body.style.overflow = "" }
+    return () => {
+      document.body.style.overflow = ""
+    }
   }, [open])
+
+  const localizedHref = (href: string) => withLocale(locale, href)
+  const currentBasePath = stripLocaleFromPath(pathname ?? "/")
 
   return (
     <>
       <header className="sticky top-0 z-[60] bg-cream/80 shadow-[0_1px_8px_rgba(0,0,0,0.06)] backdrop-blur-md">
-        <div className="rift-container flex items-center justify-between py-4 md:py-5">
-          <Link href="/" aria-label="Rift — Home" className="relative z-[60]" onClick={() => setOpen(false)}>
+        <div className="mx-auto flex w-full max-w-[1500px] items-end justify-between px-[clamp(1.25rem,4vw,3.5rem)] pt-4 pb-0.5 md:pt-5">
+          <Link
+            href={localizedHref("/")}
+            aria-label="Rift — Home"
+            className="relative z-[60]"
+            onClick={() => setOpen(false)}
+          >
             <svg
               viewBox="0 0 1500 1500"
-              className="-my-2 h-16 w-auto md:-my-3 md:h-[4.5rem]"
+              className="-my-2 h-[4.5rem] w-auto md:-my-3 md:h-[5rem]"
               aria-hidden="true"
             >
               <path
@@ -51,30 +82,35 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden gap-8 pt-1 text-[15px] font-light tracking-wide md:flex">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="nav-link group relative pb-0.5"
-                >
-                  {item.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-px bg-current transition-[width] duration-300 ease-out ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              )
-            })}
-          </nav>
+          <div className="hidden items-end gap-8 md:flex">
+            <nav className="flex gap-8 pt-1 text-[15px] font-normal tracking-wide">
+              {items.map((item) => {
+                const href = localizedHref(item.href)
+                const isActive = currentBasePath === item.href
+                return (
+                  <Link
+                    key={item.href}
+                    href={href}
+                    className="nav-link group relative pb-0.5"
+                  >
+                    {item.label}
+                    <span
+                      className={`absolute bottom-0 left-0 h-px bg-current transition-[width] duration-300 ease-out ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                )
+              })}
+            </nav>
+
+            <LocaleSwitcher locale={locale} basePath={currentBasePath} />
+          </div>
 
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="relative z-[60] pt-1 md:hidden"
+            className="relative z-[60] self-center md:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
           >
@@ -99,20 +135,22 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile menu overlay — outside header to avoid clipping */}
+      {/* Mobile menu overlay */}
       <div
         className={`fixed inset-0 z-[55] bg-cream transition-all duration-500 ease-out md:hidden ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
+        style={{ transitionDelay: open ? "0ms" : "150ms" }}
       >
         <nav className="flex h-full flex-col items-center justify-center gap-10">
-          {navItems.map((item, i) => {
-            const isActive = pathname === item.href
+          {items.map((item, i) => {
+            const href = localizedHref(item.href)
+            const isActive = currentBasePath === item.href
             return (
               <Link
                 key={item.href}
-                href={item.href}
-                className={`font-serif text-4xl font-light transition-all duration-500 ease-out ${
+                href={href}
+                className={`font-sans text-4xl font-normal transition-all duration-500 ease-out ${
                   open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                 } ${isActive ? "opacity-60" : ""}`}
                 style={{ transitionDelay: open ? `${150 + i * 60}ms` : "0ms" }}
@@ -122,8 +160,52 @@ export function Header() {
               </Link>
             )
           })}
+
+          <div
+            className={`mt-4 transition-all duration-500 ease-out ${
+              open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+            style={{ transitionDelay: open ? `${150 + items.length * 60}ms` : "0ms" }}
+            onClick={() => setOpen(false)}
+          >
+            <LocaleSwitcher locale={locale} basePath={currentBasePath} />
+          </div>
         </nav>
       </div>
     </>
+  )
+}
+
+function LocaleSwitcher({
+  locale,
+  basePath,
+}: {
+  locale: Locale
+  basePath: string
+}) {
+  return (
+    <div className="flex items-center gap-1.5 pt-1 text-[15px] font-normal uppercase tracking-[0.18em]">
+      {LOCALES.map((code, idx) => {
+        const isActive = code === locale
+        return (
+          <span key={code} className="contents">
+            {idx > 0 && <span className="opacity-40" aria-hidden="true">·</span>}
+            {isActive ? (
+              <span aria-current="true" className="opacity-100">
+                {code}
+              </span>
+            ) : (
+              <Link
+                href={withLocale(code, basePath)}
+                className="opacity-50 transition-opacity duration-200 hover:opacity-100"
+                aria-label={`Switch to ${code === "nl" ? "Nederlands" : "English"}`}
+              >
+                {code}
+              </Link>
+            )}
+          </span>
+        )
+      })}
+    </div>
   )
 }

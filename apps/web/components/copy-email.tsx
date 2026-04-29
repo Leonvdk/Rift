@@ -2,14 +2,14 @@
 
 import { useState } from "react"
 
-const EMAIL = "info@rift-furniture.nl"
+const FALLBACK_EMAIL = "info@rift-furniture.nl"
 
-export function CopyEmail() {
+export function CopyEmail({ email = FALLBACK_EMAIL }: { email?: string }) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL)
+      await navigator.clipboard.writeText(email)
       setCopied(true)
       setTimeout(() => setCopied(false), 1800)
     } catch {
@@ -24,7 +24,7 @@ export function CopyEmail() {
         onClick={handleCopy}
         className="transition-opacity duration-300 hover:opacity-50"
       >
-        {EMAIL}
+        {email}
       </button>
       <span
         aria-live="polite"

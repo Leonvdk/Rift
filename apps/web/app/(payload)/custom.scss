@@ -1,0 +1,34 @@
+/* ─────────────────────────────────────────────────────────
+   Rift admin theme — overrides on top of Payload's defaults.
+   Variables defined here cascade to every admin surface.
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand palette */
+  --color-cream: #f5f1eb;
+  --color-aubergine: #2b2c2e;
+  --color-warm-gray: #8a8480;
+
+  /* Typography — pulls Basis Grotesque Pro from the root layout's localFont */
+  --font-body: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+/* Light theme: tint the page background cream and switch text to aubergine.
+   Keep Payload's elevation scale for cards, modals, inputs etc. */
+html[data-theme="light"] {
+  --theme-bg: var(--color-cream);
+  --theme-text: var(--color-aubergine);
+}
+
+/* Make body transparent so the grain overlay (body::before in globals.css)
+   shows through above html's cream background. */
+body {
+  background: transparent !important;
+}
+
+/* Boost the grain overlay opacity slightly in the admin so it's visible
+   over the lighter chrome. */
+body::before {
+  opacity: 0.22;
+}

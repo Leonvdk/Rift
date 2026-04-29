@@ -1,10 +1,53 @@
 import Link from "next/link"
 import { CopyEmail } from "./copy-email"
+import { withLocale, type Locale, DEFAULT_LOCALE } from "@/lib/i18n"
 
-export function Footer() {
+type FooterLink = { label: string; href: string; external?: boolean | null }
+
+type Props = {
+  locale?: Locale
+  tagline?: string | null
+  email?: string | null
+  links?: FooterLink[] | null
+}
+
+const FALLBACK_LINKS_BY_LOCALE: Record<Locale, FooterLink[]> = {
+  nl: [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/rift.furniture/",
+      external: true,
+    },
+    { label: "Contact", href: "/contact", external: false },
+  ],
+  en: [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/rift.furniture/",
+      external: true,
+    },
+    { label: "Contact", href: "/contact", external: false },
+  ],
+}
+
+const FALLBACK_TAGLINE: Record<Locale, string> = {
+  nl: "Neem contact op of maak een afspraak",
+  en: "Get in touch or make an appointment",
+}
+
+export function Footer({
+  locale = DEFAULT_LOCALE,
+  tagline,
+  email = "info@rift-furniture.nl",
+  links,
+}: Props = {}) {
+  const resolvedLinks = links?.length ? links : FALLBACK_LINKS_BY_LOCALE[locale]
+  const resolvedTagline = tagline ?? FALLBACK_TAGLINE[locale]
+
   return (
-    <footer className="mt-auto pt-24 pb-8 md:pt-32 md:pb-10">
-      <div className="rift-container flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <footer className="mt-auto pt-12 pb-8 md:pt-16 md:pb-10">
+      <div className="rift-container">
+        <div className="flex flex-col gap-6 border-t border-warm-gray/15 pt-6 md:flex-row md:items-end md:justify-between md:pt-8">
         <div className="flex items-end gap-4">
           {/* Rift starburst mark */}
           <svg
@@ -77,28 +120,36 @@ export function Footer() {
               d="M781.47,808.04l-3.04,1.62-2.2.9-3.33.98,20.98,71.42,139.67,341.96c7.61-2.94,15.14-6.05,22.57-9.34l-139.78-342.18-34.88-65.36Z"
             />
           </svg>
-          <div className="text-sm font-light leading-snug">
-            <p>Get in touch or make an appointment</p>
-            <CopyEmail />
+          <div className="text-sm font-normal leading-snug">
+            {resolvedTagline && <p>{resolvedTagline}</p>}
+            {email && <CopyEmail email={email} />}
           </div>
         </div>
 
-        <nav className="flex gap-6 text-sm font-light">
-          <a
-            href="https://www.instagram.com/rift.furniture/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-opacity duration-300 hover:opacity-50"
-          >
-            Instagram
-          </a>
-          <Link
-            href="/contact"
-            className="transition-opacity duration-300 hover:opacity-50"
-          >
-            Contact
-          </Link>
+        <nav className="flex gap-6 text-sm font-normal">
+          {resolvedLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity duration-300 hover:opacity-50"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={withLocale(locale, link.href)}
+                className="transition-opacity duration-300 hover:opacity-50"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
+        </div>
       </div>
     </footer>
   )
