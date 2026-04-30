@@ -15,6 +15,7 @@ export const Media: CollectionConfig = {
   },
   upload: {
     mimeTypes: ["image/*", "video/*"],
+    focalPoint: true,
     imageSizes: [
       { name: "thumbnail", width: 400, height: 300 },
       { name: "card", width: 768, height: 1024 },

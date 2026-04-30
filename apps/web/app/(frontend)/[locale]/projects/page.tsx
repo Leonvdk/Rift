@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/fade-in"
 import { PrefetchRoutes } from "@/components/prefetch-routes"
-import { getMediaUrl } from "@/lib/media"
+import { getMediaFocalPosition, getMediaUrl } from "@/lib/media"
 import { getProjects } from "@/lib/payload"
 import { isLocale, withLocale } from "@/lib/i18n"
 
@@ -44,8 +44,8 @@ export default async function ProjectsPage({ params, searchParams }: Args) {
         <div className="rift-container">
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:gap-x-14 lg:gap-y-16">
             {projects.map((project, i) => {
-              const url =
-                getMediaUrl(project.thumbnail) ?? getMediaUrl(project.heroImage)
+              const tile = project.thumbnail ?? project.heroImage
+              const url = getMediaUrl(tile)
               return (
                 <FadeIn key={project.slug} direction="up" delay={i * 80}>
                   <Link
@@ -60,6 +60,7 @@ export default async function ProjectsPage({ params, searchParams }: Args) {
                           fill
                           sizes="(min-width: 768px) 50vw, 100vw"
                           className="scale-[1.03] object-cover transition-transform duration-700 ease-out group-hover:scale-100"
+                          style={{ objectPosition: getMediaFocalPosition(tile) }}
                         />
                       ) : (
                         <div className="absolute inset-0 bg-warm-gray/10" />

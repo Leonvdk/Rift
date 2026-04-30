@@ -95,11 +95,13 @@ export interface Config {
     header: Header;
     footer: Footer;
     integrations: Integration;
+    emails: Email;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
+    emails: EmailsSelect<false> | EmailsSelect<true>;
   };
   locale: 'nl' | 'en';
   widgets: {
@@ -456,6 +458,10 @@ export interface Project {
              */
             imageTwo?: (number | null) | Media;
             /**
+             * Which side the images sit on. Text wraps around them on the opposite side on desktop.
+             */
+            imagesPosition?: ('right' | 'left') | null;
+            /**
              * Body copy that wraps around the images on desktop.
              */
             paragraphs?:
@@ -787,6 +793,7 @@ export interface ProjectsSelect<T extends boolean = true> {
               enabled?: T;
               imageOne?: T;
               imageTwo?: T;
+              imagesPosition?: T;
               paragraphs?:
                 | T
                 | {
@@ -947,6 +954,69 @@ export interface Integration {
   createdAt?: string | null;
 }
 /**
+ * Templates for transactional emails sent by the contact form.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emails".
+ */
+export interface Email {
+  id: number;
+  addresses: {
+    /**
+     * Display name shown as the sender.
+     */
+    fromName: string;
+    /**
+     * Verified Resend sender address (must belong to a domain you've verified in Resend).
+     */
+    fromAddress: string;
+    /**
+     * Where contact form notifications get delivered. Usually the business owner.
+     */
+    ownerRecipient: string;
+  };
+  /**
+   * Sent to the visitor after they submit the form. Reassures them the message arrived.
+   */
+  clientConfirmation: {
+    /**
+     * Subject line.
+     */
+    subject: string;
+    /**
+     * Heading at the top of the email body.
+     */
+    heading: string;
+    /**
+     * Opening paragraph (e.g. thanking them for reaching out).
+     */
+    intro: string;
+    /**
+     * Optional second paragraph (e.g. what to expect / response time).
+     */
+    body?: string | null;
+    /**
+     * Closing line, e.g. '— Rift' or 'With regards, Rift'.
+     */
+    signOff: string;
+  };
+  /**
+   * Sent to you/the business owner. Includes the visitor's message.
+   */
+  ownerNotification: {
+    /**
+     * Subject line.
+     */
+    subject: string;
+    /**
+     * Heading at the top of the email body.
+     */
+    heading: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
@@ -1005,6 +1075,37 @@ export interface IntegrationsSelect<T extends boolean = true> {
         placement?: T;
         script?: T;
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emails_select".
+ */
+export interface EmailsSelect<T extends boolean = true> {
+  addresses?:
+    | T
+    | {
+        fromName?: T;
+        fromAddress?: T;
+        ownerRecipient?: T;
+      };
+  clientConfirmation?:
+    | T
+    | {
+        subject?: T;
+        heading?: T;
+        intro?: T;
+        body?: T;
+        signOff?: T;
+      };
+  ownerNotification?:
+    | T
+    | {
+        subject?: T;
+        heading?: T;
       };
   updatedAt?: T;
   createdAt?: T;

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { getMediaAlt, getMediaUrl } from "@/lib/media"
+import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -69,6 +69,7 @@ export function TwoImagesQuoteSection({
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
+                style={{ objectPosition: getMediaFocalPosition(imageOne) }}
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />
@@ -87,6 +88,7 @@ export function TwoImagesQuoteSection({
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
+                style={{ objectPosition: getMediaFocalPosition(imageTwo) }}
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />

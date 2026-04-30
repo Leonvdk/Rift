@@ -1,7 +1,7 @@
 import { cache } from "react"
 import { getPayload as getPayloadCore } from "payload"
 import config from "../payload.config.ts"
-import type { Page, Project, Header, Footer, Integration } from "../payload-types.ts"
+import type { Page, Project, Header, Footer, Integration, Email } from "../payload-types.ts"
 import type { Locale } from "./i18n.ts"
 import { DEFAULT_LOCALE } from "./i18n.ts"
 
@@ -89,6 +89,21 @@ export const getFooter = cache(
         depth: 1,
         locale,
       })) as Footer
+    } catch {
+      return null
+    }
+  },
+)
+
+export const getEmails = cache(
+  async (locale: Locale = DEFAULT_LOCALE): Promise<Email | null> => {
+    const payload = await getPayloadInstance()
+    try {
+      return (await payload.findGlobal({
+        slug: "emails",
+        depth: 0,
+        locale,
+      })) as Email
     } catch {
       return null
     }

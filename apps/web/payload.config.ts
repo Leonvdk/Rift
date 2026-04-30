@@ -13,6 +13,7 @@ import { Projects } from "./collections/Projects.ts"
 import { Header } from "./globals/Header.ts"
 import { Footer } from "./globals/Footer.ts"
 import { Integrations } from "./globals/Integrations.ts"
+import { Emails } from "./globals/Emails.ts"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -25,7 +26,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Pages, Projects],
-  globals: [Header, Footer, Integrations],
+  globals: [Header, Footer, Integrations, Emails],
   localization: {
     locales: [
       { label: "Nederlands", code: "nl" },

@@ -78,6 +78,7 @@ export function BlockRenderer({ blocks }: Props) {
                 key={key}
                 imageOne={block.imageOne}
                 imageTwo={block.imageTwo}
+                imagesPosition={block.imagesPosition}
                 paragraphs={block.paragraphs}
               />
             )

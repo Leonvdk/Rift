@@ -23,6 +23,19 @@ export const FloatedImagePairBlock: Block = {
       admin: { description: "Always shown." },
     },
     {
+      name: "imagesPosition",
+      type: "select",
+      defaultValue: "right",
+      options: [
+        { label: "Images on right (text wraps on left)", value: "right" },
+        { label: "Images on left (text wraps on right)", value: "left" },
+      ],
+      admin: {
+        description:
+          "Which side the images sit on. Text wraps around them on the opposite side on desktop.",
+      },
+    },
+    {
       name: "paragraphs",
       type: "array",
       localized: true,

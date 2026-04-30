@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { getMediaAlt, getMediaUrl } from "@/lib/media"
+import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -100,6 +100,7 @@ export function TextWithImageSection({
                 fill
                 sizes={sizes}
                 className="object-cover"
+                style={{ objectPosition: getMediaFocalPosition(image) }}
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />

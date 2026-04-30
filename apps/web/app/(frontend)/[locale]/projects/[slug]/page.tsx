@@ -3,7 +3,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/fade-in"
 import { BlockRenderer } from "@/components/BlockRenderer"
-import { getMediaAlt, getMediaUrl } from "@/lib/media"
+import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
 import { getProjectBySlug } from "@/lib/payload"
 import { isLocale } from "@/lib/i18n"
 
@@ -43,6 +43,7 @@ export default async function ProjectPage({ params }: Args) {
             priority
             sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: getMediaFocalPosition(project.heroImage) }}
           />
         ) : (
           <div className="absolute inset-0 bg-aubergine" />

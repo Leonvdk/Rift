@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
 import { RiftStarburst } from "@/components/rift-starburst"
-import { getMediaAlt, getMediaUrl } from "@/lib/media"
+import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -24,6 +24,7 @@ export function HeroSection({ image, caption, showStarburst }: Props) {
           priority
           sizes="100vw"
           className="object-cover"
+          style={{ objectPosition: getMediaFocalPosition(image) }}
         />
       ) : (
         <div className="absolute inset-0 bg-aubergine" />

@@ -17,11 +17,14 @@
     "@payloadcms/next": "^3.84.1",
     "@payloadcms/richtext-lexical": "^3.84.1",
     "@payloadcms/storage-vercel-blob": "^3.84.1",
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.0.8",
     "graphql": "^16.13.2",
     "next": "latest",
     "payload": "^3.84.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "resend": "^6.12.2",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
