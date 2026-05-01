@@ -7,6 +7,7 @@ type Props = {
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
   imagesPosition?: ("left" | "right") | null
+  ratio?: ("third" | "quarter") | null
   paragraphs?: { text: string; id?: string | null }[] | null
 }
 
@@ -14,6 +15,7 @@ export function FloatedImagePairSection({
   imageOne,
   imageTwo,
   imagesPosition,
+  ratio,
   paragraphs,
 }: Props) {
   const url1 = getMediaUrl(imageOne)
@@ -21,16 +23,19 @@ export function FloatedImagePairSection({
   const alt1 = getMediaAlt(imageOne)
   const alt2 = getMediaAlt(imageTwo)
   const onLeft = imagesPosition === "left"
+  // third (default): images take 2/3, text wraps in 1/3.
+  // quarter: images take 3/4, text wraps in 1/4.
+  const widthClass = ratio === "quarter" ? "md:w-3/4" : "md:w-2/3"
   const floatClass = onLeft
-    ? "md:float-left md:mr-10 lg:mr-14"
-    : "md:float-right md:ml-10 lg:ml-14"
+    ? `md:float-left md:mr-10 lg:mr-14 ${widthClass}`
+    : `md:float-right md:ml-10 lg:ml-14 ${widthClass}`
 
   return (
     <section className="pt-10 pb-20 md:pt-14 md:pb-28 lg:pt-6 lg:pb-12">
       <div className="rift-container">
         <FadeIn
           direction="up"
-          className={`mb-8 flex gap-4 md:mb-4 md:w-2/3 md:gap-5 lg:gap-9 ${floatClass}`}
+          className={`mb-8 flex gap-4 md:mb-4 md:gap-5 lg:gap-9 ${floatClass}`}
         >
           <div className="relative hidden aspect-[6/10] flex-1 md:block">
             {url1 ? (

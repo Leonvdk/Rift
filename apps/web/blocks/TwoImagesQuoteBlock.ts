@@ -51,6 +51,16 @@ export const TwoImagesQuoteBlock: Block = {
       ],
     },
     {
+      name: "ratio",
+      type: "select",
+      defaultValue: "third",
+      options: [
+        { label: "1/3 text · 2/3 images", value: "third" },
+        { label: "1/4 text · 3/4 images", value: "quarter" },
+      ],
+      admin: { description: "How wide the text column is relative to the images." },
+    },
+    {
       name: "textVerticalAlign",
       type: "select",
       defaultValue: "center",

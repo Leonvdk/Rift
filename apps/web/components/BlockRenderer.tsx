@@ -56,6 +56,7 @@ export function BlockRenderer({ blocks }: Props) {
                 imageOne={block.imageOne}
                 imageTwo={block.imageTwo}
                 quotePosition={block.quotePosition}
+                ratio={block.ratio}
                 textVerticalAlign={block.textVerticalAlign}
               />
             )
@@ -69,6 +70,7 @@ export function BlockRenderer({ blocks }: Props) {
                 imagePosition={block.imagePosition}
                 imageOne={block.imageOne}
                 imageTwo={block.imageTwo}
+                ratio={block.ratio}
                 textVerticalAlign={block.textVerticalAlign}
               />
             )
@@ -79,6 +81,7 @@ export function BlockRenderer({ blocks }: Props) {
                 imageOne={block.imageOne}
                 imageTwo={block.imageTwo}
                 imagesPosition={block.imagesPosition}
+                ratio={block.ratio}
                 paragraphs={block.paragraphs}
               />
             )

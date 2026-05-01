@@ -34,7 +34,8 @@ export function LocaleSwitcher({ locale }: Props) {
       const rect = target.getBoundingClientRect()
       const overlap = window.innerHeight - rect.top
       const aboveLine = overlap + ABOVE_LINE_PX
-      setBottomOffset(Math.max(BASE_OFFSET_PX, aboveLine))
+      // Round so subpixel changes during scroll don't trigger re-renders.
+      setBottomOffset(Math.round(Math.max(BASE_OFFSET_PX, aboveLine)))
     }
     update()
     window.addEventListener("scroll", update, { passive: true })

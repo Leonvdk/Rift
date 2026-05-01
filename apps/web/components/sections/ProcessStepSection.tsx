@@ -10,6 +10,7 @@ type Props = {
   imagePosition?: ("left" | "right") | null
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
+  ratio?: ("third" | "quarter") | null
   textVerticalAlign?: ("top" | "center" | "bottom") | null
 }
 
@@ -32,6 +33,7 @@ export function ProcessStepSection({
   imagePosition,
   imageOne,
   imageTwo,
+  ratio,
   textVerticalAlign,
 }: Props) {
   const url1 = getMediaUrl(imageOne)
@@ -40,6 +42,7 @@ export function ProcessStepSection({
   const alt2 = getMediaAlt(imageTwo, title ?? "")
   const imageOnLeft = imagePosition === "left"
   const isDouble = Boolean(imageTwo)
+  const isQuarter = ratio === "quarter"
   const align = textVerticalAlign ?? "center"
   const flexAlignClass = ALIGN_FLEX[align]
   const colAlignClass = ALIGN_COL[align]
@@ -53,11 +56,14 @@ export function ProcessStepSection({
   )
 
   if (isDouble) {
-    // 3-column grid: text + img + img
+    // text + img + img — `third` keeps even split, `quarter` narrows the text
+    const doubleGridClass = isQuarter
+      ? "md:grid-cols-[1fr_1.5fr_1.5fr]"
+      : "md:grid-cols-3"
     return (
       <section className="py-7 md:py-9 lg:py-12">
         <div className="rift-container">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-5 lg:gap-9">
+          <div className={`grid grid-cols-1 gap-8 ${doubleGridClass} md:gap-5 lg:gap-9`}>
             <div
               className={`flex ${flexAlignClass} ${imageOnLeft ? "md:order-last" : ""}`}
             >
@@ -109,11 +115,13 @@ export function ProcessStepSection({
     )
   }
 
-  // Single image: 4-col grid with text col-span-1, image col-span-3
+  // Single image: text col-1, image col-2 (third) or col-3 (quarter)
+  const singleGridCols = isQuarter ? "md:grid-cols-4" : "md:grid-cols-3"
+  const singleImageColSpan = isQuarter ? "md:col-span-3" : "md:col-span-2"
   return (
     <section className="py-7 md:py-9 lg:py-12">
       <div className="rift-container">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12 lg:gap-16">
+        <div className={`grid grid-cols-1 gap-8 ${singleGridCols} md:gap-12 lg:gap-16`}>
           <div
             className={`flex flex-col ${colAlignClass} md:col-span-1 ${
               imageOnLeft ? "md:order-last" : ""
@@ -132,7 +140,7 @@ export function ProcessStepSection({
           <FadeIn
             direction="up"
             delay={150}
-            className="relative aspect-[4/3] md:col-span-3"
+            className={`relative aspect-[4/3] ${singleImageColSpan}`}
           >
             {url1 ? (
               <Image

@@ -314,6 +314,10 @@ export interface Page {
             imageTwo?: (number | null) | Media;
             quotePosition?: ('right' | 'left') | null;
             /**
+             * How wide the text column is relative to the images.
+             */
+            ratio?: ('third' | 'quarter') | null;
+            /**
              * How the quote column aligns vertically against the images on desktop.
              */
             textVerticalAlign?: ('top' | 'center' | 'bottom') | null;
@@ -333,6 +337,10 @@ export interface Page {
             title?: string | null;
             description: string;
             imagePosition?: ('right' | 'left') | null;
+            /**
+             * How wide the text column is relative to the image(s).
+             */
+            ratio?: ('third' | 'quarter') | null;
             /**
              * Always shown.
              */
@@ -457,6 +465,10 @@ export interface Project {
              * Which side the images sit on. Text wraps around them on the opposite side on desktop.
              */
             imagesPosition?: ('right' | 'left') | null;
+            /**
+             * How wide the text column is relative to the images.
+             */
+            ratio?: ('third' | 'quarter') | null;
             /**
              * Body copy that wraps around the images on desktop.
              */
@@ -706,6 +718,7 @@ export interface PagesSelect<T extends boolean = true> {
               imageOne?: T;
               imageTwo?: T;
               quotePosition?: T;
+              ratio?: T;
               textVerticalAlign?: T;
               id?: T;
               blockName?: T;
@@ -718,6 +731,7 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               imagePosition?: T;
+              ratio?: T;
               imageOne?: T;
               imageTwo?: T;
               textVerticalAlign?: T;
@@ -789,6 +803,7 @@ export interface ProjectsSelect<T extends boolean = true> {
               imageOne?: T;
               imageTwo?: T;
               imagesPosition?: T;
+              ratio?: T;
               paragraphs?:
                 | T
                 | {

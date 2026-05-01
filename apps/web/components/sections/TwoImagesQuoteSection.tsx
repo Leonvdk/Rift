@@ -10,6 +10,7 @@ type Props = {
   imageOne?: number | Media | null
   imageTwo?: number | Media | null
   quotePosition?: ("left" | "right") | null
+  ratio?: ("third" | "quarter") | null
   textVerticalAlign?: ("top" | "center" | "bottom") | null
 }
 
@@ -26,8 +27,15 @@ export function TwoImagesQuoteSection({
   imageOne,
   imageTwo,
   quotePosition,
+  ratio,
   textVerticalAlign,
 }: Props) {
+  const isQuarter = ratio === "quarter"
+  // third (default): 3-col grid → text 1/3, each image 1/3.
+  // quarter: 4-col asymmetric → text 1/4, each image 3/8.
+  const gridClass = isQuarter
+    ? "md:grid-cols-[1fr_1.5fr_1.5fr]"
+    : "md:grid-cols-3"
   const url1 = getMediaUrl(imageOne)
   const url2 = getMediaUrl(imageTwo)
   const alt1 = getMediaAlt(imageOne, "Rift interior craftsmanship")
@@ -39,7 +47,7 @@ export function TwoImagesQuoteSection({
   return (
     <section className="py-7 md:py-9 lg:py-12">
       <div className="rift-container">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-5 lg:gap-9">
+        <div className={`grid grid-cols-1 gap-8 ${gridClass} md:gap-5 lg:gap-9`}>
           <div
             className={`flex ${alignClass} ${quoteOnRight ? "md:order-last" : ""}`}
           >

@@ -36,6 +36,16 @@ export const ProcessStepBlock: Block = {
       ],
     },
     {
+      name: "ratio",
+      type: "select",
+      defaultValue: "third",
+      options: [
+        { label: "1/3 text · 2/3 image(s)", value: "third" },
+        { label: "1/4 text · 3/4 image(s)", value: "quarter" },
+      ],
+      admin: { description: "How wide the text column is relative to the image(s)." },
+    },
+    {
       name: "imageOne",
       type: "upload",
       relationTo: "media",
