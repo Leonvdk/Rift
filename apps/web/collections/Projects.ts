@@ -79,13 +79,6 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "intro",
-      type: "textarea",
-      localized: true,
-      required: true,
-      admin: { description: "Short paragraph below the hero." },
-    },
-    {
       name: "layout",
       type: "blocks",
       blocks: [TextWithImageBlock, FloatedImagePairBlock, RichTextBlock],

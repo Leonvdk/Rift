@@ -13,20 +13,20 @@ type Props = {
 
 const FALLBACK_LINKS_BY_LOCALE: Record<Locale, FooterLink[]> = {
   nl: [
+    { label: "Contact", href: "/contact", external: false },
     {
       label: "Instagram",
       href: "https://www.instagram.com/rift.furniture/",
       external: true,
     },
-    { label: "Contact", href: "/contact", external: false },
   ],
   en: [
+    { label: "Contact", href: "/contact", external: false },
     {
       label: "Instagram",
       href: "https://www.instagram.com/rift.furniture/",
       external: true,
     },
-    { label: "Contact", href: "/contact", external: false },
   ],
 }
 
@@ -47,12 +47,15 @@ export function Footer({
   return (
     <footer className="mt-auto pt-12 pb-8 md:pt-16 md:pb-10">
       <div className="rift-container">
-        <div className="flex flex-col gap-6 border-t border-warm-gray/15 pt-6 md:flex-row md:items-end md:justify-between md:pt-8">
-        <div className="flex items-end gap-4">
+        <div
+          data-footer-line
+          className="flex flex-col gap-6 border-t border-warm-gray/15 pt-6 md:flex-row md:items-end md:justify-between md:pt-8"
+        >
+        <div className="flex items-center gap-4">
           {/* Rift starburst mark */}
           <svg
             viewBox="0 0 1500 1500"
-            className="h-9 w-9 shrink-0 text-aubergine"
+            className="h-10 w-10 shrink-0 text-aubergine"
             aria-hidden="true"
           >
             <path

@@ -49,32 +49,21 @@ export default async function ProjectPage({ params }: Args) {
           <div className="absolute inset-0 bg-aubergine" />
         )}
         <div className="absolute inset-0 bg-black/20" />
+
+        {project.title && (
+          <div className="relative z-10 flex h-full flex-col items-center justify-end pb-7 text-cream md:pb-10 lg:pb-12">
+            <FadeIn direction="fade" delay={300}>
+              <h1 className="font-sans text-[clamp(1.9375rem,5vw,3.4375rem)] font-normal tracking-normal leading-none">
+                {project.title}
+              </h1>
+            </FadeIn>
+          </div>
+        )}
       </section>
 
-      {(project.title || project.intro) && (
-        <section className="pt-7 md:pt-10 lg:pt-20">
-          <div className="rift-container">
-            <div className="lg:ml-[100px]">
-              {project.title && (
-                <FadeIn direction="up">
-                  <h1 className="mb-3 font-sans text-[clamp(1.625rem,5vw,2.625rem)] font-medium tracking-normal leading-none md:mb-4 lg:mb-5">
-                    {project.title}
-                  </h1>
-                </FadeIn>
-              )}
-              {project.intro && (
-                <FadeIn direction="up" delay={100}>
-                  <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed lg:max-w-[35%]">
-                    {project.intro}
-                  </p>
-                </FadeIn>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <BlockRenderer blocks={project.layout} />
+      <div className="pt-7 md:pt-9 lg:pt-12">
+        <BlockRenderer blocks={project.layout} />
+      </div>
     </>
   )
 }

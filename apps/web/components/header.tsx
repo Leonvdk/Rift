@@ -45,7 +45,7 @@ export function Header({ locale, navItems }: Props) {
   return (
     <>
       <header className="sticky top-0 z-[60] bg-cream/80 shadow-[0_1px_8px_rgba(0,0,0,0.06)] backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[1500px] items-end justify-between px-[clamp(1.25rem,4vw,3.5rem)] pt-4 pb-0.5 md:pt-5">
+        <div className="mx-auto flex w-full max-w-[1560px] items-end justify-between px-[clamp(1.25rem,3.5vw,2.75rem)] pt-4 pb-0.5 md:pt-5">
           <Link
             href={localizedHref("/")}
             aria-label="Rift — Home"
@@ -54,7 +54,7 @@ export function Header({ locale, navItems }: Props) {
           >
             <svg
               viewBox="0 0 1500 1500"
-              className="-my-2 h-[4.5rem] w-auto md:-my-3 md:h-[5rem]"
+              className="-my-2 h-[5rem] w-auto md:-my-3 md:h-[5.5rem]"
               aria-hidden="true"
             >
               <path
@@ -85,14 +85,17 @@ export function Header({ locale, navItems }: Props) {
                 <Link
                   key={item.href}
                   href={href}
-                  className="nav-link group relative pb-0.5"
+                  className={`relative pb-0.5 transition-opacity duration-300 hover:opacity-50 ${
+                    isActive ? "" : ""
+                  }`}
                 >
                   {item.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-px bg-current transition-[width] duration-300 ease-out ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
+                  {isActive && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-0 left-0 h-px w-full bg-current"
+                    />
+                  )}
                 </Link>
               )
             })}
@@ -101,7 +104,7 @@ export function Header({ locale, navItems }: Props) {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="relative z-[60] self-center md:hidden"
+            className="relative z-[60] self-end pb-[18px] md:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
           >

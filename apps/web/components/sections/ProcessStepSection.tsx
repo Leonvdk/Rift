@@ -43,6 +43,8 @@ export function ProcessStepSection({
   const align = textVerticalAlign ?? "center"
   const flexAlignClass = ALIGN_FLEX[align]
   const colAlignClass = ALIGN_COL[align]
+  const isTop = align === "top"
+  const topOffsetClass = isTop ? "md:-mt-[10px]" : ""
 
   const headingMarkup = (
     <h2 className="mb-6 font-sans text-[clamp(1.4375rem,3vw,2.1875rem)] font-normal tracking-normal leading-tight">
@@ -59,7 +61,7 @@ export function ProcessStepSection({
             <div
               className={`flex ${flexAlignClass} ${imageOnLeft ? "md:order-last" : ""}`}
             >
-              <div>
+              <div className={topOffsetClass}>
                 <FadeIn direction="side">{headingMarkup}</FadeIn>
                 <FadeIn direction="up" delay={150}>
                   <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">
@@ -115,7 +117,7 @@ export function ProcessStepSection({
           <div
             className={`flex flex-col ${colAlignClass} md:col-span-1 ${
               imageOnLeft ? "md:order-last" : ""
-            }`}
+            } ${topOffsetClass}`}
           >
             <FadeIn direction="side" delay={100}>
               {headingMarkup}

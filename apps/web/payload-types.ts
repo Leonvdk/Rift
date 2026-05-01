@@ -397,10 +397,6 @@ export interface Project {
    */
   thumbnail?: (number | null) | Media;
   /**
-   * Short paragraph below the hero.
-   */
-  intro: string;
-  /**
    * Body of the project page, composed of blocks.
    */
   layout?:
@@ -764,7 +760,6 @@ export interface ProjectsSelect<T extends boolean = true> {
   status?: T;
   heroImage?: T;
   thumbnail?: T;
-  intro?: T;
   layout?:
     | T
     | {

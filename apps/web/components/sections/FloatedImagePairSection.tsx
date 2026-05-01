@@ -62,7 +62,7 @@ export function FloatedImagePairSection({
           </div>
         </FadeIn>
 
-        <FadeIn direction="up">
+        <FadeIn direction="up" className="md:-mt-[10px]">
           {paragraphs?.map((p, i) => (
             <p
               key={p.id ?? i}

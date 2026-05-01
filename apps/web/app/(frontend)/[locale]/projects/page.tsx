@@ -42,7 +42,7 @@ export default async function ProjectsPage({ params, searchParams }: Args) {
       <PrefetchRoutes routes={prefetchRoutes} />
       <section className="py-10 md:py-16 lg:py-7">
         <div className="rift-container">
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:gap-x-14 lg:gap-y-16">
+          <div className="grid grid-cols-1 gap-x-3 gap-y-5 md:grid-cols-2 md:gap-x-5 md:gap-y-7 lg:gap-x-7 lg:gap-y-8">
             {projects.map((project, i) => {
               const tile = project.thumbnail ?? project.heroImage
               const url = getMediaUrl(tile)
@@ -59,14 +59,14 @@ export default async function ProjectsPage({ params, searchParams }: Args) {
                           alt={project.title ?? ""}
                           fill
                           sizes="(min-width: 768px) 50vw, 100vw"
-                          className="scale-[1.03] object-cover transition-transform duration-700 ease-out group-hover:scale-100"
+                          className="object-cover transition-opacity duration-500 ease-out group-hover:opacity-80"
                           style={{ objectPosition: getMediaFocalPosition(tile) }}
                         />
                       ) : (
                         <div className="absolute inset-0 bg-warm-gray/10" />
                       )}
                     </div>
-                    <p className="mt-3 text-[15px] font-light [text-shadow:0_0_0_transparent] transition-[text-shadow] duration-700 ease-out group-hover:[text-shadow:0.3px_0_0_currentColor,-0.3px_0_0_currentColor] md:mt-4">
+                    <p className="mt-3 text-[15px] font-light transition-opacity duration-300 ease-out group-hover:opacity-50 md:mt-4">
                       {project.title}
                     </p>
                   </Link>

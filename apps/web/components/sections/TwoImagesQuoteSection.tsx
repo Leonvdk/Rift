@@ -34,6 +34,7 @@ export function TwoImagesQuoteSection({
   const alt2 = getMediaAlt(imageTwo, "Rift custom furniture detail")
   const quoteOnRight = quotePosition !== "left"
   const alignClass = ALIGN_CLASS[textVerticalAlign ?? "center"]
+  const isTop = textVerticalAlign === "top"
 
   return (
     <section className="py-7 md:py-9 lg:py-12">
@@ -42,7 +43,7 @@ export function TwoImagesQuoteSection({
           <div
             className={`flex ${alignClass} ${quoteOnRight ? "md:order-last" : ""}`}
           >
-            <div>
+            <div className={isTop ? "md:-mt-[10px]" : ""}>
               {leadingText && (
                 <FadeIn direction="up">
                   <p className="text-[clamp(0.938rem,1.1vw,1.125rem)] font-normal leading-relaxed">

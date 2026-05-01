@@ -34,6 +34,7 @@ export function TextWithImageSection({
   const textOnLeft = imagePosition !== "left"
   const isQuarter = ratio === "quarter"
   const alignClass = ALIGN_CLASS[textVerticalAlign ?? "center"]
+  const isTop = textVerticalAlign === "top"
 
   // Quarter: 4-col grid with text col-span-1, image col-span-3
   // Third (default): 3-col grid with text col-span-1, image col-span-2
@@ -62,7 +63,7 @@ export function TextWithImageSection({
               textOnLeft ? "" : "md:order-last"
             }`}
           >
-            <div>
+            <div className={isTop ? "md:-mt-[10px]" : ""}>
               {paragraphs?.map((p, i) => (
                 <FadeIn key={p.id ?? i} direction="up" delay={150 + i * 50}>
                   <p
