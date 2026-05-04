@@ -23,10 +23,14 @@ export const HeroBlock: Block = {
       admin: { description: "Tagline shown over the image, e.g. 'Interior, Craft & Design'." },
     },
     {
-      name: "showStarburst",
+      name: "animateLogo",
+      label: "Logo animation",
       type: "checkbox",
       defaultValue: true,
-      admin: { description: "Show the Rift starburst above the caption." },
+      admin: {
+        description:
+          "Animate the Rift logo on load. When unchecked, the logo still shows but appears instantly without the staggered reveal.",
+      },
     },
   ],
 }

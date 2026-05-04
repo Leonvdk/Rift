@@ -30,7 +30,7 @@ export function BlockRenderer({ blocks }: Props) {
                 key={key}
                 image={block.image}
                 caption={block.caption}
-                showStarburst={block.showStarburst}
+                animateLogo={block.animateLogo}
               />
             )
           case "textWithImage":

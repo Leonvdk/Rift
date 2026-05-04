@@ -7,10 +7,10 @@ import type { Media } from "@/payload-types"
 type Props = {
   image?: number | Media | null
   caption?: string | null
-  showStarburst?: boolean | null
+  animateLogo?: boolean | null
 }
 
-export function HeroSection({ image, caption, showStarburst }: Props) {
+export function HeroSection({ image, caption, animateLogo }: Props) {
   const url = getMediaUrl(image)
   const alt = getMediaAlt(image, caption ?? "Rift")
 
@@ -32,9 +32,10 @@ export function HeroSection({ image, caption, showStarburst }: Props) {
       <div className="absolute inset-0 bg-black/20" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-end pb-7 text-cream md:pb-10 lg:pb-12">
-        {showStarburst !== false && (
-          <RiftStarburst className="mt-[25px] mb-7 h-28 w-28 text-cream md:mb-10 md:h-40 md:w-40 lg:mb-12 lg:h-48 lg:w-48" />
-        )}
+        <RiftStarburst
+          className="mt-[25px] mb-7 h-[125px] w-[125px] text-cream md:mb-10 lg:mb-12"
+          animate={animateLogo !== false}
+        />
         {caption && (
           <FadeIn direction="fade" delay={1700}>
             <h1 className="font-sans text-[clamp(1.9375rem,5vw,3.4375rem)] font-normal tracking-normal leading-none">

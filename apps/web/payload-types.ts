@@ -241,9 +241,9 @@ export interface Page {
              */
             caption?: string | null;
             /**
-             * Show the Rift starburst above the caption.
+             * Animate the Rift logo on load. When unchecked, the logo still shows but appears instantly without the staggered reveal.
              */
-            showStarburst?: boolean | null;
+            animateLogo?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero';
@@ -685,7 +685,7 @@ export interface PagesSelect<T extends boolean = true> {
               enabled?: T;
               image?: T;
               caption?: T;
-              showStarburst?: T;
+              animateLogo?: T;
               id?: T;
               blockName?: T;
             };

@@ -21,13 +21,21 @@ const SPIKE_PATHS = [
   "M781.47,808.04l-3.04,1.62-2.2.9-3.33.98,20.98,71.42,139.67,341.96c7.61-2.94,15.14-6.05,22.57-9.34l-139.78-342.18-34.88-65.36Z",
 ]
 
-export function RiftStarburst({ className }: { className?: string }) {
-  const [open, setOpen] = useState(false)
+export function RiftStarburst({
+  className,
+  animate = true,
+}: {
+  className?: string
+  /** When false, render the logo fully visible without the staggered reveal animation. */
+  animate?: boolean
+}) {
+  const [open, setOpen] = useState(!animate)
 
   useEffect(() => {
+    if (!animate) return
     const timer = setTimeout(() => setOpen(true), 200)
     return () => clearTimeout(timer)
-  }, [])
+  }, [animate])
 
   return (
     <svg viewBox="0 0 1500 1500" className={className} aria-hidden="true">
@@ -36,12 +44,16 @@ export function RiftStarburst({ className }: { className?: string }) {
           key={i}
           d={d}
           fill="currentColor"
-          style={{
-            transformOrigin: "750px 750px",
-            opacity: open ? 1 : 0,
-            transform: open ? "scale(1)" : "scale(0)",
-            transition: `opacity 0.3s ease ${i * 0.06}s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.06}s`,
-          }}
+          style={
+            animate
+              ? {
+                  transformOrigin: "750px 750px",
+                  opacity: open ? 1 : 0,
+                  transform: open ? "scale(1)" : "scale(0)",
+                  transition: `opacity 0.3s ease ${i * 0.06}s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.06}s`,
+                }
+              : undefined
+          }
         />
       ))}
     </svg>
