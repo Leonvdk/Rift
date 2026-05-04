@@ -1,9 +1,9 @@
-import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/fade-in"
+import { MediaImage } from "@/components/media-image"
 import { PrefetchRoutes } from "@/components/prefetch-routes"
-import { getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { getMediaUrl } from "@/lib/media"
 import { getProjects } from "@/lib/payload"
 import { isLocale, withLocale } from "@/lib/i18n"
 
@@ -54,13 +54,13 @@ export default async function ProjectsPage({ params, searchParams }: Args) {
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {url ? (
-                        <Image
-                          src={url}
+                        <MediaImage
+                          media={tile}
                           alt={project.title ?? ""}
                           fill
                           sizes="(min-width: 768px) 50vw, 100vw"
                           className="object-cover transition-opacity duration-500 ease-out group-hover:opacity-80"
-                          style={{ objectPosition: getMediaFocalPosition(tile) }}
+                          applyFocalPosition
                         />
                       ) : (
                         <div className="absolute inset-0 bg-warm-gray/10" />

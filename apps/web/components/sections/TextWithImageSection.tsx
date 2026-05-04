@@ -1,6 +1,6 @@
-import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { MediaImage } from "@/components/media-image"
+import { getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -30,7 +30,6 @@ export function TextWithImageSection({
 }: Props) {
   const imageUrl = getMediaUrl(image)
   const videoUrl = getMediaUrl(video)
-  const alt = getMediaAlt(image, heading ?? "")
   const textOnLeft = imagePosition !== "left"
   const isQuarter = ratio === "quarter"
   const alignClass = ALIGN_CLASS[textVerticalAlign ?? "center"]
@@ -95,13 +94,13 @@ export function TextWithImageSection({
                 className="absolute inset-0 h-full w-full object-cover"
               />
             ) : imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={alt}
+              <MediaImage
+                media={image}
+                alt={heading ?? ""}
                 fill
                 sizes={sizes}
                 className="object-cover"
-                style={{ objectPosition: getMediaFocalPosition(image) }}
+                applyFocalPosition
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />

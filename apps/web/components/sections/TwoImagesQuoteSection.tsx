@@ -1,6 +1,6 @@
-import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { MediaImage } from "@/components/media-image"
+import { getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -38,8 +38,6 @@ export function TwoImagesQuoteSection({
     : "md:grid-cols-3"
   const url1 = getMediaUrl(imageOne)
   const url2 = getMediaUrl(imageTwo)
-  const alt1 = getMediaAlt(imageOne, "Rift interior craftsmanship")
-  const alt2 = getMediaAlt(imageTwo, "Rift custom furniture detail")
   const quoteOnRight = quotePosition !== "left"
   const alignClass = ALIGN_CLASS[textVerticalAlign ?? "center"]
   const isTop = textVerticalAlign === "top"
@@ -72,13 +70,13 @@ export function TwoImagesQuoteSection({
 
           <FadeIn direction="side" className="relative aspect-[6/10]">
             {url1 ? (
-              <Image
-                src={url1}
-                alt={alt1}
+              <MediaImage
+                media={imageOne}
+                alt="Rift interior craftsmanship"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
-                style={{ objectPosition: getMediaFocalPosition(imageOne) }}
+                applyFocalPosition
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />
@@ -91,13 +89,13 @@ export function TwoImagesQuoteSection({
             className="relative hidden aspect-[6/10] md:block"
           >
             {url2 ? (
-              <Image
-                src={url2}
-                alt={alt2}
+              <MediaImage
+                media={imageTwo}
+                alt="Rift custom furniture detail"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
-                style={{ objectPosition: getMediaFocalPosition(imageTwo) }}
+                applyFocalPosition
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />

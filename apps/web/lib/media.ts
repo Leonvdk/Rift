@@ -31,3 +31,15 @@ export function getMediaFocalPosition(media: MediaInput): string {
   if (typeof x !== "number" || typeof y !== "number") return "center"
   return `${x}% ${y}%`
 }
+
+/**
+ * Returns the auto-generated blur preview (a base64 webp data URL) so
+ * `<Image placeholder="blur" blurDataURL={...}>` can render an instant
+ * placeholder while the full image streams in. Returns `undefined` when the
+ * media doc has no preview yet (older uploads), in which case the caller
+ * should skip `placeholder="blur"`.
+ */
+export function getMediaBlurDataURL(media: MediaInput): string | undefined {
+  if (!media || typeof media === "number") return undefined
+  return media.blurDataURL ?? undefined
+}

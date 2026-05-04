@@ -1,6 +1,6 @@
-import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
-import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { MediaImage } from "@/components/media-image"
+import { getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -20,8 +20,6 @@ export function FloatedImagePairSection({
 }: Props) {
   const url1 = getMediaUrl(imageOne)
   const url2 = getMediaUrl(imageTwo)
-  const alt1 = getMediaAlt(imageOne)
-  const alt2 = getMediaAlt(imageTwo)
   const onLeft = imagesPosition === "left"
   // third (default): images take 2/3, text wraps in 1/3.
   // quarter: images take 3/4, text wraps in 1/4.
@@ -39,13 +37,12 @@ export function FloatedImagePairSection({
         >
           <div className="relative hidden aspect-[6/10] flex-1 md:block">
             {url1 ? (
-              <Image
-                src={url1}
-                alt={alt1}
+              <MediaImage
+                media={imageOne}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
-                style={{ objectPosition: getMediaFocalPosition(imageOne) }}
+                applyFocalPosition
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />
@@ -53,13 +50,12 @@ export function FloatedImagePairSection({
           </div>
           <div className="relative aspect-[6/10] flex-1">
             {url2 ? (
-              <Image
-                src={url2}
-                alt={alt2}
+              <MediaImage
+                media={imageTwo}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
-                style={{ objectPosition: getMediaFocalPosition(imageTwo) }}
+                applyFocalPosition
               />
             ) : (
               <div className="absolute inset-0 bg-warm-gray/10" />

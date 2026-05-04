@@ -1,7 +1,7 @@
-import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
+import { MediaImage } from "@/components/media-image"
 import { RiftStarburst } from "@/components/rift-starburst"
-import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { getMediaUrl } from "@/lib/media"
 import type { Media } from "@/payload-types"
 
 type Props = {
@@ -11,20 +11,19 @@ type Props = {
 }
 
 export function HeroSection({ image, caption, animateLogo }: Props) {
-  const url = getMediaUrl(image)
-  const alt = getMediaAlt(image, caption ?? "Rift")
+  const hasImage = Boolean(getMediaUrl(image))
 
   return (
     <section className="relative h-[75vh] min-h-[480px] overflow-hidden bg-aubergine md:h-[85vh]">
-      {url ? (
-        <Image
-          src={url}
-          alt={alt}
+      {hasImage ? (
+        <MediaImage
+          media={image}
+          alt={caption ?? "Rift"}
           fill
           priority
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: getMediaFocalPosition(image) }}
+          applyFocalPosition
         />
       ) : (
         <div className="absolute inset-0 bg-aubergine" />

@@ -172,6 +172,10 @@ export interface Media {
    * Optional caption shown beneath the image.
    */
   caption?: string | null;
+  /**
+   * Auto-generated tiny blurred preview (base64 webp). Used for <Image placeholder='blur'>.
+   */
+  blurDataURL?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -622,6 +626,7 @@ export interface UsersSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  blurDataURL?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

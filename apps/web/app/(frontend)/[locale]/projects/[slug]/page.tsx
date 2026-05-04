@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/fade-in"
 import { BlockRenderer } from "@/components/BlockRenderer"
-import { getMediaAlt, getMediaFocalPosition, getMediaUrl } from "@/lib/media"
+import { MediaImage } from "@/components/media-image"
+import { getMediaUrl } from "@/lib/media"
 import { getProjectBySlug } from "@/lib/payload"
 import { isLocale } from "@/lib/i18n"
 
@@ -30,20 +30,19 @@ export default async function ProjectPage({ params }: Args) {
   if (!project) notFound()
 
   const heroUrl = getMediaUrl(project.heroImage)
-  const heroAlt = getMediaAlt(project.heroImage, project.title ?? "")
 
   return (
     <>
       <section className="relative h-[75vh] min-h-[480px] overflow-hidden bg-aubergine md:h-[70vh]">
         {heroUrl ? (
-          <Image
-            src={heroUrl}
-            alt={heroAlt}
+          <MediaImage
+            media={project.heroImage}
+            alt={project.title ?? ""}
             fill
             priority
             sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: getMediaFocalPosition(project.heroImage) }}
+            applyFocalPosition
           />
         ) : (
           <div className="absolute inset-0 bg-aubergine" />
