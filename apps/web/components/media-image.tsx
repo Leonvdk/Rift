@@ -43,6 +43,7 @@ export function MediaImage({
     <Image
       src={url}
       alt={alt}
+      quality={95}
       {...(blurDataURL ? { placeholder: "blur" as const, blurDataURL } : {})}
       style={objectPosition ? { ...style, objectPosition } : style}
       {...rest}

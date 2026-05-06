@@ -54,7 +54,7 @@ export function Header({ locale, navItems }: Props) {
           >
             <svg
               viewBox="0 0 1500 1500"
-              className="-my-2 h-[5rem] w-auto md:-my-3 md:h-[5.5rem]"
+              className="-my-2 h-[95px] w-auto md:-my-3 md:h-[103px]"
               aria-hidden="true"
             >
               <path

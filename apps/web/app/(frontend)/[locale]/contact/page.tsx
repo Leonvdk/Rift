@@ -155,6 +155,7 @@ export default function ContactPage() {
               alt={t.altImage}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
+              quality={95}
               placeholder="blur"
               className="object-cover"
             />

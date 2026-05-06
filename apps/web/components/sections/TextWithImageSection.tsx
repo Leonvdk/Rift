@@ -80,7 +80,7 @@ export function TextWithImageSection({
           <FadeIn
             direction="up"
             delay={200}
-            className={`relative aspect-[4/3] ${imageColSpan}`}
+            className={`relative aspect-[16/11] ${imageColSpan}`}
           >
             {videoUrl ? (
               <video

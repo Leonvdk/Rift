@@ -32,7 +32,7 @@ export function HeroSection({ image, caption, animateLogo }: Props) {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-end pb-7 text-cream md:pb-10 lg:pb-12">
         <RiftStarburst
-          className="mt-[25px] mb-7 h-[125px] w-[125px] text-cream md:mb-10 lg:mb-12"
+          className="mt-[45px] mb-[25px] h-[167px] w-[167px] text-cream"
           animate={animateLogo !== false}
         />
         {caption && (

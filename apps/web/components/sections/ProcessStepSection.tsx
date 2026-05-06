@@ -139,7 +139,7 @@ export function ProcessStepSection({
           <FadeIn
             direction="up"
             delay={150}
-            className={`relative aspect-[4/3] ${singleImageColSpan}`}
+            className={`relative aspect-[16/11] ${singleImageColSpan}`}
           >
             {url1 ? (
               <MediaImage

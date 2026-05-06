@@ -47,10 +47,8 @@ export function RiftStarburst({
           style={
             animate
               ? {
-                  transformOrigin: "750px 750px",
                   opacity: open ? 1 : 0,
-                  transform: open ? "scale(1)" : "scale(0)",
-                  transition: `opacity 0.3s ease ${i * 0.06}s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.06}s`,
+                  transition: `opacity 0.45s ease-out ${i * 0.06}s`,
                 }
               : undefined
           }
